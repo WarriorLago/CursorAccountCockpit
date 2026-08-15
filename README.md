@@ -1,4 +1,4 @@
-<p align="center">
+p align="center">
   <strong>简体中文</strong> · <a href="./README.en.md">English</a>
 </p>
 
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 0.2.30</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 0.2.31</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">全部版本</a>
   ·
@@ -49,16 +49,16 @@ Cursor Account Cockpit 是一个 **Windows 本地桌面应用**，专门服务 C
 
 账号凭据保存在本机目录，不上传到本项目仓库。额度与账单请求直接发往 Cursor 官方域名。
 
-## 最新版本 0.2.30
+## 最新版本 0.2.31
 
 请只从本仓库官方 Release 下载（下列为直链）：
 
 | 文件 | 说明 |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.30-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.30/Cursor-Account-Cockpit-0.2.30-x64-setup.exe) | Windows x64 安装包 |
-| [Cursor-Account-Cockpit-0.2.30-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.30/Cursor-Account-Cockpit-0.2.30-portable.exe) | Windows x64 便携版 |
-| [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.30/SHA256SUMS.txt) | SHA-256 校验 |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.30/latest.json) | 应用内更新清单 |
+| [Cursor-Account-Cockpit-0.2.31-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.31/Cursor-Account-Cockpit-0.2.31-x64-setup.exe) | Windows x64 安装包 |
+| [Cursor-Account-Cockpit-0.2.31-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.31/Cursor-Account-Cockpit-0.2.31-portable.exe) | Windows x64 便携版 |
+| [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.31/SHA256SUMS.txt) | SHA-256 校验 |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.31/latest.json) | 应用内更新清单 |
 
 更多版本见 [项目下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html) 或 [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)。部分旧版本仅有源码 ZIP。
 
