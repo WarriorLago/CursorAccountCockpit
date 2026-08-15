@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>下载 · Cursor Account Cockpit</title>
+  <meta name="description" content="下载 Cursor Account Cockpit：GitHub Release 安装包与便携版直链。" />
+  <link rel="icon" href="assets/potato.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=20260815p30" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topnav">
+      <a class="brand" href="./">
+        <span class="brand-mark"><img src="assets/potato.svg" alt="" width="48" height="48" /></span>
+        <span>
+          <strong>Cursor Account Cockpit</strong>
+          <em>下载</em>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="./">首页</a>
+        <a href="features.html">功能</a>
+        <a class="active" href="download.html">下载</a>
+        <a href="./#contact">联系</a>
+        <a href="./#tip">赞赏</a>
+        <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
+        <a class="lang-switch" href="en/download.html">EN</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-brand">
+        <div class="hero-potato"><img src="assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
+        <div>
+          <h1>下载 Windows 版</h1>
+          <p>按钮均为 GitHub Releases 直链，点击即下载</p>
+        </div>
+      </div>
+      <p class="lead">
+        推荐使用最新 <strong>v0.2.29</strong>。下方列表按 GitHub Releases 真实附件显示安装包与便携版。
+      </p>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="panel deep">
+        <h2>最新版 v0.2.29（推荐）</h2>
+        <p>以下链接已核对，可直接保存到本地。</p>
+        <div class="dl-grid">
+          <div class="dl-item">
+            <div>
+              <strong>Windows 安装包</strong>
+              <span>Cursor-Account-Cockpit-0.2.29-x64-setup.exe</span>
+            </div>
+            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/Cursor-Account-Cockpit-0.2.29-x64-setup.exe">下载安装包</a>
+          </div>
+          <div class="dl-item">
+            <div>
+              <strong>Windows 便携版</strong>
+              <span>Cursor-Account-Cockpit-0.2.29-portable.exe</span>
+            </div>
+            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/Cursor-Account-Cockpit-0.2.29-portable.exe">下载便携版</a>
+          </div>
+          <div class="dl-item">
+            <div>
+              <strong>SHA-256 校验</strong>
+              <span>SHA256SUMS.txt</span>
+            </div>
+            <a class="btn btn-ghost" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/SHA256SUMS.txt">下载校验文件</a>
+          </div>
+        </div>
+        <p class="note" style="color:rgba(255,247,236,0.7);margin-top:14px">
+          校验示例：<code>Get-FileHash .\Cursor-Account-Cockpit-0.2.29-x64-setup.exe -Algorithm SHA256</code>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>全部已发布版本</h2>
+        <p>从 GitHub API 实时读取每个 Release 的安装包与便携版附件。</p>
+      </div>
+      <div id="release-list" data-lang="zh" class="release-list"></div>
+      <p class="note">
+        若列表加载失败，请直接打开
+        <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">GitHub Releases</a>。
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <div class="row">
+        <span><a href="./">← 返回首页</a></span>
+        <a href="en/download.html">English</a>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/releases.js" defer></script>
+</body>
+</html>
