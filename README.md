@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/potato.svg" alt="Cursor Account Cockpit" width="96" height="96">
+  <img src="./src-tauri/icons/potato.svg" alt="Cursor Account Cockpit" width="96" height="96">
 </p>
 
 <h1 align="center">Cursor Account Cockpit</h1>
@@ -14,8 +14,8 @@
 
 <p align="center">
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/WarriorLago/CursorAccountCockpit?label=release&color=2ea44f"></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/WarriorLago/CursorAccountCockpit/total?label=downloads&color=0e8a16"></a>
   <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey"></a>
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/WarriorLago/CursorAccountCockpit/total"></a>
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/WarriorLago/CursorAccountCockpit?style=social"></a>
 </p>
 
@@ -57,10 +57,11 @@ Cursor Account Cockpit 是一个 **Windows 本地桌面应用**，专门服务 C
 | --- | --- |
 | [Cursor-Account-Cockpit-0.2.29-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/Cursor-Account-Cockpit-0.2.29-x64-setup.exe) | Windows x64 安装包 |
 | [Cursor-Account-Cockpit-0.2.29-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/Cursor-Account-Cockpit-0.2.29-portable.exe) | Windows x64 便携版 |
+| [Cursor-Account-Cockpit-0.2.29-source.zip](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/Cursor-Account-Cockpit-0.2.29-source.zip) | 源码 ZIP |
 | [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/SHA256SUMS.txt) | SHA-256 校验 |
 | [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.29/latest.json) | 应用内更新清单 |
 
-更多版本见 [项目下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html) 或 [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)。
+更多版本见 [项目下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html) 或 [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)。部分旧版本仅有源码 ZIP。
 
 ---
 

@@ -12,6 +12,8 @@
         empty: "No downloadable assets for this release.",
         sourceOnly: "No Windows installer in this release.",
         published: "Published",
+        totalDownloads: "Total installer downloads",
+        downloads: "downloads",
       }
     : {
         loading: "正在从 GitHub 拉取可下载文件…",
@@ -20,6 +22,8 @@
         empty: "该版本没有可下载附件。",
         sourceOnly: "此版本没有 Windows 安装包。",
         published: "发布于",
+        totalDownloads: "安装包累计下载",
+        downloads: "次下载",
       };
 
   root.innerHTML = '<p class="status">' + copy.loading + "</p>";
@@ -71,6 +75,20 @@
       if (!Array.isArray(releases) || !releases.length) throw new Error("empty");
       root.innerHTML = "";
 
+      var totalInstallerDownloads = 0;
+      releases.forEach(function (rel) {
+        (rel.assets || []).forEach(function (asset) {
+          if (isWindowsInstaller(asset.name)) {
+            totalInstallerDownloads += asset.download_count || 0;
+          }
+        });
+      });
+      var summary = document.getElementById("download-stats");
+      if (summary) {
+        summary.textContent =
+          copy.totalDownloads + " · " + totalInstallerDownloads.toLocaleString() + " " + copy.downloads;
+      }
+
       releases.forEach(function (rel, index) {
         var assets = (rel.assets || [])
           .filter(function (a) { return !isSource(a.name); })
@@ -88,7 +106,13 @@
         var meta = document.createElement("div");
         meta.className = "meta";
         var when = rel.published_at ? new Date(rel.published_at).toISOString().slice(0, 10) : "";
-        meta.textContent = when ? copy.published + " " + when : "";
+        var relDownloads = 0;
+        assets.forEach(function (asset) {
+          if (isWindowsInstaller(asset.name)) relDownloads += asset.download_count || 0;
+        });
+        meta.textContent =
+          (when ? copy.published + " " + when : "") +
+          (relDownloads ? (when ? " · " : "") + relDownloads.toLocaleString() + " " + copy.downloads : "");
         header.appendChild(title);
         header.appendChild(meta);
         card.appendChild(header);
