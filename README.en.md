@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/potato.svg" alt="Cursor Account Cockpit" width="96" height="96">
+  <img src="./src-tauri/icons/potato.svg" alt="Cursor Account Cockpit" width="96" height="96">
 </p>
 
 <h1 align="center">Cursor Account Cockpit</h1>
@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download 0.2.32</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download 0.2.33</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">All releases</a>
   ·
@@ -49,16 +49,16 @@ Cursor Account Cockpit is a **Windows desktop app** built around real Cursor mul
 
 Credentials stay on your machine. Quota and billing requests go to official Cursor domains only.
 
-## Latest release 0.2.32
+## Latest release 0.2.33
 
 Download only from this repo’s official Release assets (direct links):
 
 | File | Description |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.32-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.32/Cursor-Account-Cockpit-0.2.32-x64-setup.exe) | Windows x64 installer |
-| [Cursor-Account-Cockpit-0.2.32-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.32/Cursor-Account-Cockpit-0.2.32-portable.exe) | Windows x64 portable build |
-| [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.32/SHA256SUMS.txt) | SHA-256 checksums |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.32/latest.json) | In-app update manifest |
+| [Cursor-Account-Cockpit-0.2.33-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.33/Cursor-Account-Cockpit-0.2.33-x64-setup.exe) | Windows x64 installer |
+| [Cursor-Account-Cockpit-0.2.33-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.33/Cursor-Account-Cockpit-0.2.33-portable.exe) | Windows x64 portable build |
+| [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.33/SHA256SUMS.txt) | SHA-256 checksums |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.33/latest.json) | In-app update manifest |
 
 More versions: [project download page](https://warriorlago.github.io/CursorAccountCockpit/en/download.html) or [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases). Some older tags are source-only.
 
