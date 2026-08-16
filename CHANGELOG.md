@@ -1,5 +1,38 @@
 # Changelog
 
+## [0.2.33] - 2026-08-16
+
+### Changed
+
+- Remove Screenshot demo data from release builds (debug-only marketing helper).
+- Make Automatic download and update a dedicated Settings section with explicit toggle buttons.
+
+## [0.2.32] - 2026-08-16
+
+### Changed
+
+- Promote Automatic download and update to a dedicated Settings card above Application updates so the opt-in control is easier to find.
+
+## [0.2.31] - 2026-08-16
+
+### Changed
+
+- On launch, only check for a newer version and remind by default; the launch dialog no longer downloads the installer.
+- Add an Automatic download and update toggle in Settings (off by default). Auto OTA runs at launch only when this is enabled.
+- When auto-update is off, the reminder points users to Settings for a manual check and install.
+
+## [0.2.30] - 2026-08-15
+
+### Added
+
+- Add a Screenshot demo data toggle in Settings: fill the UI with sample accounts, invoices, and sessions for public screenshots without rewriting on-disk Cursor account files; turning it off restores the in-app cache.
+- Show cumulative GitHub Releases installer download counts on the project download page, including per-release totals.
+- Sync a downloads badge on the GitHub profile README and repository README.
+
+### Notes
+
+- No in-app usage telemetry in this release. If analytics are added later, they will be off by default and require an explicit opt-in.
+
 ## [0.2.29] - 2026-08-15
 
 ### Added
