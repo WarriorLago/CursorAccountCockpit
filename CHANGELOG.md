@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.34] - 2026-08-16
+
+### Fixed
+
+- In-app updates now download and verify the full NSIS installer; reject bootstrap-sized artifacts that only restarted the old binary.
+- Do not relaunch the previous executable after a failed install; prefer the installed app path after success.
+- Add a short cooldown after automatic update failures, plus skip-this-version controls.
+- Account inject writes `authId` / `cachedSignUpType` and clears a missing refresh token.
+- TokenKeeper no longer hot-writes Cursor `state.vscdb` while Cursor is running.
+- Launch update checks honor the external-network switch and check interval.
+- Wrap account-detail encryption keys with DPAPI on Windows; export redacts secrets unless confirmed.
+
 ## [0.2.33] - 2026-08-16
 
 ### Changed
