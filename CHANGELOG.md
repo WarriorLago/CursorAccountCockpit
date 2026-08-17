@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.37] - 2026-08-17
+
+### Fixed
+
+- Taskbar clicks no longer hide the window into the tray; minimize follows Windows defaults, while close can still tray-minimize.
+- After in-app update install, relaunch from the registry install location and prefer an exe whose version matches the update.
+- Automatically refresh quota once after Cursor JSON / token / local import.
+
 ## [0.2.36] - 2026-08-17
 
 ### Fixed
