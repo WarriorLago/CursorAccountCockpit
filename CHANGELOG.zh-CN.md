@@ -1,5 +1,12 @@
 # 更新日志
 
+## [0.2.36] - 2026-08-17
+
+### 修复
+
+- 修复 0.2.35 安装包未打入前端资源导致启动报 `asset not found: index.html`。
+- 更新清单解析兼容 UTF-8 BOM，避免 GitHub `latest.json` 触发 `UPDATE_MANIFEST_PARSE_FAILED`。
+
 ## [0.2.35] - 2026-08-17
 
 ### 修复

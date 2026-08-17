@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.36] - 2026-08-17
+
+### Fixed
+
+- Rebuild the Windows package so frontend assets are embedded; fixes startup `asset not found: index.html` from 0.2.35.
+- Tolerate a UTF-8 BOM in the update manifest to avoid `UPDATE_MANIFEST_PARSE_FAILED`.
+
 ## [0.2.35] - 2026-08-17
 
 ### Fixed
