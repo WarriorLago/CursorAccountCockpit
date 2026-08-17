@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.35] - 2026-08-17
+
+### Fixed
+
+- Allow importing token JSON without email, including `cursor-token-lite/v1` dumps.
+- Use `{auth_id}@cursor.imported` as a placeholder until a later quota refresh fills the real email.
+- Surface the real JSON parser error instead of a generic “unable to parse JSON” message.
+
 ## [0.2.34] - 2026-08-16
 
 ### Fixed
