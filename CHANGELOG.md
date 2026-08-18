@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.39] - 2026-08-18
+
+### Added
+
+- The author and support dialog includes a button that opens the project website in the browser.
+- When in-app update download or install fails, show an official-site fallback with the latest version.
+
+## [0.2.38] - 2026-08-17
+
+### Fixed
+
+- Personal release builds bake the private OTA manifest URL again (instead of GitHub Releases).
+- Retry transient HTTP/CDN failures during update download and include the status code in errors.
+- Cursor import / token / OAuth returns immediately after saving; quota refresh continues in the background so the import UI does not keep spinning, and the refresh-all button spins while that background refresh runs.
+
 ## [0.2.37] - 2026-08-17
 
 ### Fixed
