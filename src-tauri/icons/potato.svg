@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="skin" x1="0.18" y1="0.12" x2="0.86" y2="0.9">
+      <stop offset="0" stop-color="#F7C86B"/>
+      <stop offset="0.52" stop-color="#D99A3E"/>
+      <stop offset="1" stop-color="#A86424"/>
+    </linearGradient>
+    <linearGradient id="sprout" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9CDD6A"/>
+      <stop offset="1" stop-color="#3C8C4D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- compact sprout that remains recognizable in the Windows title bar -->
+  <path d="M529 198C531 121 580 75 650 69C653 143 610 193 529 198Z"
+        fill="url(#sprout)" stroke="#315D31" stroke-width="28" stroke-linejoin="round"/>
+  <path d="M511 205C482 133 420 104 352 122C375 193 432 226 511 205Z"
+        fill="url(#sprout)" stroke="#315D31" stroke-width="28" stroke-linejoin="round"/>
+  <path d="M520 239C524 190 546 153 585 120" fill="none" stroke="#315D31" stroke-width="24" stroke-linecap="round"/>
+
+  <!-- potato body -->
+  <path d="M287 234C385 174 527 184 636 222C762 266 848 366 849 505C850 672 760 814 616 880C473 945 293 901 210 773C130 650 145 454 221 327C240 295 260 260 287 234Z"
+        fill="url(#skin)" stroke="#5E351D" stroke-width="36" stroke-linejoin="round"/>
+
+  <!-- highlight -->
+  <path d="M291 325C347 273 429 252 508 264" fill="none" stroke="#FFE2A0" stroke-width="32" stroke-linecap="round" opacity="0.72"/>
+
+  <!-- eyes and friendly mouth -->
+  <ellipse cx="382" cy="516" rx="48" ry="58" fill="#3B251B"/>
+  <ellipse cx="650" cy="516" rx="48" ry="58" fill="#3B251B"/>
+  <circle cx="365" cy="494" r="13" fill="#FFF7E7"/>
+  <circle cx="633" cy="494" r="13" fill="#FFF7E7"/>
+  <path d="M425 647C468 692 561 699 608 643" fill="none" stroke="#3B251B" stroke-width="30" stroke-linecap="round"/>
+
+  <!-- potato eyes/freckles -->
+  <ellipse cx="286" cy="458" rx="25" ry="16" fill="#8C552D" opacity="0.8" transform="rotate(-24 286 458)"/>
+  <ellipse cx="738" cy="630" rx="28" ry="17" fill="#8C552D" opacity="0.82" transform="rotate(22 738 630)"/>
+  <ellipse cx="323" cy="735" rx="23" ry="15" fill="#8C552D" opacity="0.75" transform="rotate(18 323 735)"/>
+  <ellipse cx="686" cy="347" rx="23" ry="14" fill="#8C552D" opacity="0.75" transform="rotate(-18 686 347)"/>
+</svg>
