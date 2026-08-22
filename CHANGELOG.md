@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.41] - 2026-08-21
+
+### Fixed
+
+- Replace the Cursor page's ambiguous confirm/cancel export flow with a dedicated cross-device transfer export that always includes both stored AT and RF credentials.
+- Preflight every selected account before creating the file: recover credentials from raw Cursor auth data, exchange RF for a fresh AT and the latest rotated RF, and stop with an account-specific message when credentials are rejected.
+- Reject app-export-shaped imports that omit RF instead of accepting an account that will fail after AT expires; validate a whole batch before writing any account.
+- Label the export modal as a complete cross-device backup and state clearly that the saved JSON contains sensitive transfer credentials.
+
+## [0.2.40] - 2026-08-21
+
+### Fixed
+
+- Fix the Cursor account page silently taking the default redacted-export path. Cross-device export now prompts from the page's real export entry and includes AT+RF whenever the source account has a stored refreshToken; redacted lists with an empty accessToken are rejected on import.
+- Normalize WorkOS cookie-wrapped tokens, fall back to stored authId when building the session cookie, and surface clearer refresh errors when refreshToken is missing.
+- Keep the full product title visible in the expanded sidebar and align the brand logo and all navigation icons to one center axis when collapsed.
+
+### Changed
+
+- Cursor-only sidebar can collapse to icons and expand again, with a smoother width/label transition and a toggle that remains available at the minimum window width.
+
 ## [0.2.39] - 2026-08-18
 
 ### Added
