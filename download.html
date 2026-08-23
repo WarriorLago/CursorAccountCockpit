@@ -36,13 +36,14 @@
       <div class="hero-brand">
         <div class="hero-potato"><img src="assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
         <div>
-          <h1>下载 Windows 版</h1>
-          <p>按钮均为 GitHub Releases 直链，点击即下载</p>
+          <h1>下载 Windows 与 macOS 版</h1>
+          <p>页面会检测当前平台，并提示适合的安装包</p>
         </div>
       </div>
       <p class="lead">
-        推荐使用最新 <strong>v0.2.41</strong>。下方列表按 GitHub Releases 真实附件显示安装包与便携版。
+        Windows 最新正式版为 <strong>0.2.41</strong>，macOS 独立版本为 <strong>2.0.1</strong>。下方列表按 GitHub Releases 真实附件显示。
       </p>
+      <div id="platform-recommendation" aria-live="polite"><span>正在检测当前平台…</span></div>
     </section>
 
     <section class="section" style="padding-top:0">
@@ -99,5 +100,6 @@
     </footer>
   </div>
   <script src="assets/releases.js" defer></script>
+  <script src="assets/platform-recommendation.js" defer></script>
 </body>
 </html>

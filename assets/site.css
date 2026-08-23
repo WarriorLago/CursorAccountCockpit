@@ -476,6 +476,39 @@ img.qr-alipay,
   color: rgba(255, 247, 236, 0.62);
 }
 
+.platform-recommendation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 22px 0 6px;
+  padding: 14px 16px;
+  border: 1px solid rgba(245, 174, 92, 0.45);
+  border-radius: 16px;
+  background: rgba(255, 248, 237, 0.72);
+  box-shadow: 0 12px 30px rgba(85, 55, 30, 0.08);
+}
+.platform-recommendation-copy {
+  display: grid;
+  gap: 3px;
+}
+.platform-recommendation-copy .eyebrow {
+  color: var(--accent-deep);
+  font-size: 11px;
+  letter-spacing: .12em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.platform-recommendation-copy strong { color: var(--ink); font-size: 16px; }
+.platform-recommendation-copy small { color: var(--muted); font-size: 12px; }
+.platform-recommendation-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.platform-recommendation.is-neutral { color: var(--muted); justify-content: flex-start; }
+
+@media (max-width: 620px) {
+  .platform-recommendation { align-items: flex-start; flex-direction: column; }
+  .platform-recommendation-actions { justify-content: flex-start; }
+}
+
 .site-footer {
   padding: 18px 0 40px;
   color: var(--muted);

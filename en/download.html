@@ -32,15 +32,16 @@
       </nav>
     </header>
 
-    <section class="hero">
+      <section class="hero">
       <div class="hero-brand">
         <div class="hero-potato"><img src="../assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
         <div>
-          <h1>Download for Windows</h1>
-          <p>Every button is a real GitHub asset URL</p>
+          <h1>Download for Windows and macOS</h1>
+          <p>The page detects your platform and recommends a matching package</p>
         </div>
       </div>
-      <p class="lead">Prefer <strong>v0.2.41</strong>. The list below shows installers and portable builds from GitHub Releases.</p>
+      <div id="platform-recommendation" aria-live="polite"><span>Detecting your platform…</span></div>
+      <p class="lead">Windows latest is <strong>0.2.41</strong>; macOS is managed independently at <strong>2.0.1</strong>.</p>
     </section>
 
     <section class="section" style="padding-top:0">
@@ -80,5 +81,6 @@
     </footer>
   </div>
   <script src="../assets/releases.js" defer></script>
+  <script src="../assets/platform-recommendation.js" defer></script>
 </body>
 </html>
