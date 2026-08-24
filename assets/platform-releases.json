@@ -2,6 +2,7 @@
   "windows": {
     "label": "Windows",
     "version": "0.2.41",
+    "system": "Windows 10/11 x64",
     "setup": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-0.2.41-x64-setup.exe",
     "portable": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-0.2.41-portable.exe",
     "manifest": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/latest.json"
@@ -9,6 +10,7 @@
   "macos": {
     "label": "macOS",
     "version": "2.0.1",
+    "system": "Apple Silicon: macOS 11+ · Intel: macOS 10.15+",
     "universal": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-2.0.1-macos-universal.dmg",
     "arm64": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-2.0.1-macos-arm64.dmg",
     "x64": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-2.0.1-macos-x64.dmg",

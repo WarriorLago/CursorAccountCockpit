@@ -49,6 +49,7 @@
         '<strong>' + item.label + '</strong></div>' +
         (isRecommended ? '<span class="platform-match">' + copy.highlighted + '</span>' : '') + '</div>' +
         '<span class="platform-version">' + copy.version + ' ' + item.version + '</span>' +
+        '<span class="platform-system">' + item.system + '</span>' +
         '<div class="platform-card-actions">' + links + '</div></article>';
     }
     root.innerHTML =

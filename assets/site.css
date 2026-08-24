@@ -537,6 +537,7 @@ img.qr-alipay,
 .platform-icon { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; color: #fff; background: linear-gradient(145deg, #1f7a78, #15545f); font-size: 13px; }
 .platform-card:nth-child(2) .platform-icon { background: linear-gradient(145deg, #7543b5, #3d2774); }
 .platform-version { color: var(--muted); font-size: 12px; font-weight: 700; }
+.platform-system { color: var(--muted); font-size: 11px; line-height: 1.45; }
 .platform-card-actions { display: flex; flex-wrap: wrap; gap: 7px; }
 .platform-card-actions .btn { min-height: 32px; padding: 0 10px; font-size: 12px; }
 .platform-recommendation.is-neutral { color: var(--muted); }
