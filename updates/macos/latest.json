@@ -1,0 +1,23 @@
+{
+  "version": "2.0.2",
+  "publishedAt": "2026-08-25T08:06:22Z",
+  "notes": "macOS 2.0.2: Intel, Apple Silicon and Universal compatibility release.",
+  "notesZh": "macOS 2.0.2：适配 Intel、Apple Silicon 与 Universal，并固定最低系统版本。",
+  "platforms": {
+    "macos-universal-dmg": {
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.2/Cursor-Account-Cockpit-2.0.2-macos-universal.dmg",
+      "sha256": "e93f2c591317a85e10dd027930537479873c994a6bbf560610d2869f572bf0bd",
+      "size": 53257837
+    },
+    "darwin-aarch64-app": {
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.2/Cursor-Account-Cockpit-2.0.2-macos-arm64.dmg",
+      "sha256": "1ad69c465c349c6ce8d76b1059c4746df9b71d199a6583b5e52949b83e796b1f",
+      "size": 25893902
+    },
+    "darwin-x86_64-app": {
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.2/Cursor-Account-Cockpit-2.0.2-macos-x64.dmg",
+      "sha256": "5c8b1cc2439f70b31a02a0d78f466a655186bdbc9a1367747d5348f44c438d98",
+      "size": 28066270
+    }
+  }
+}

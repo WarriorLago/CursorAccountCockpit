@@ -38,6 +38,7 @@ jobs:
             verify_arch: arm64
             minimum: "11.0"
             config: src-tauri/tauri.macos-modern.conf.json
+            update_key: darwin-aarch64-app
           - label: Intel
             runner: macos-15-intel
             rust_target: x86_64-apple-darwin
@@ -45,6 +46,7 @@ jobs:
             verify_arch: x86_64
             minimum: "10.15"
             config: src-tauri/tauri.macos-intel.conf.json
+            update_key: darwin-x86_64-app
           - label: Universal
             runner: macos-15
             rust_target: universal-apple-darwin
@@ -52,6 +54,7 @@ jobs:
             verify_arch: universal
             minimum: "11.0"
             config: src-tauri/tauri.macos-modern.conf.json
+            update_key: macos-universal-dmg
     runs-on: ${{ matrix.runner }}
     steps:
       - name: Checkout private source
@@ -78,7 +81,7 @@ jobs:
       - name: Cache Rust
         uses: swatinem/rust-cache@v2
         with:
-          key: macos-2.0.2-${{ matrix.asset_arch }}
+          key: macos-${{ inputs.version }}-${{ matrix.asset_arch }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -92,14 +95,16 @@ jobs:
       - name: Sync macOS version
         env:
           CURSOR_ACCOUNT_COCKPIT_PLATFORM: macos
-          CURSOR_ACCOUNT_COCKPIT_MACOS_UPDATE_MANIFEST_URL: https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v${{ inputs.version }}/macos-latest.json
+          CURSOR_ACCOUNT_COCKPIT_MACOS_UPDATE_MANIFEST_URL: https://warriorlago.github.io/CursorAccountCockpit/updates/macos/latest.json
+          CURSOR_ACCOUNT_COCKPIT_UPDATE_PLATFORM_KEY: ${{ matrix.update_key }}
         run: npm run sync-version
 
       - name: Build DMG
         shell: bash
         env:
           CURSOR_ACCOUNT_COCKPIT_PLATFORM: macos
-          CURSOR_ACCOUNT_COCKPIT_MACOS_UPDATE_MANIFEST_URL: https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v${{ inputs.version }}/macos-latest.json
+          CURSOR_ACCOUNT_COCKPIT_MACOS_UPDATE_MANIFEST_URL: https://warriorlago.github.io/CursorAccountCockpit/updates/macos/latest.json
+          CURSOR_ACCOUNT_COCKPIT_UPDATE_PLATFORM_KEY: ${{ matrix.update_key }}
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
@@ -165,6 +170,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: actions/download-artifact@v4
         with:
           pattern: macos-*
@@ -205,8 +212,8 @@ jobs:
           manifest = {
               'version': version,
               'publishedAt': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
-              'notes': 'macOS 2.0.2: Intel, Apple Silicon and Universal compatibility release.',
-              'notesZh': 'macOS 2.0.2：适配 Intel、Apple Silicon 与 Universal，并固定最低系统版本。',
+              'notes': f'macOS {version}: reliable OTA channel, Intel, Apple Silicon and Universal compatibility.',
+              'notesZh': f'macOS {version}：修复 OTA 更新通道，并适配 Intel、Apple Silicon 与 Universal。',
               'platforms': platforms,
           }
           Path('macos-latest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
@@ -221,15 +228,16 @@ jobs:
           VERSION: ${{ inputs.version }}
         run: |
           set -euo pipefail
-          cat > release-notes.md <<'EOF'
-          ## macOS 2.0.2
+          cat > release-notes.md <<EOF
+          ## macOS ${VERSION}
 
           - Apple Silicon（M1–M5）：macOS 11 及以上
           - Intel Mac：macOS 10.15 及以上
           - 同时提供 Apple Silicon、Intel 和 Universal DMG
           - 发布前校验 Mach-O 架构、最低系统版本与代码签名完整性
+          - 使用稳定 OTA 清单地址，按芯片架构下载对应更新包
 
-          Windows 继续使用独立版本线 `0.2.41`。
+          Windows 继续使用独立版本线。
           EOF
           if gh release view "v${VERSION}" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             gh release edit "v${VERSION}" --repo "$GITHUB_REPOSITORY" --title "Cursor Account Cockpit macOS v${VERSION}" --notes-file release-notes.md --latest=false
@@ -237,6 +245,41 @@ jobs:
             gh release create "v${VERSION}" --repo "$GITHUB_REPOSITORY" --title "Cursor Account Cockpit macOS v${VERSION}" --notes-file release-notes.md --latest=false
           fi
           gh release upload "v${VERSION}" dist/* --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Publish stable macOS OTA channel file
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          mkdir -p updates/macos
+          cp dist/macos-latest.json updates/macos/latest.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add updates/macos/latest.json
+          if git diff --cached --quiet; then
+            echo "Stable macOS OTA manifest is already current"
+          else
+            git commit -m "release(macos): publish OTA channel ${VERSION}"
+            git push origin HEAD:main
+          fi
+
+      - name: Refresh legacy pinned macOS manifests
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          # 2.0.1-2.0.3 test/release builds used a version-pinned manifest URL.
+          # Keep existing legacy releases as relay points to the newest channel.
+          for tag in v2.0.1 v2.0.2 v2.0.3; do
+            if [ "$tag" = "v${VERSION}" ]; then continue; fi
+            if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+              gh release upload "$tag" dist/macos-latest.json --repo "$GITHUB_REPOSITORY" --clobber
+              echo "Refreshed legacy relay $tag"
+            fi
+          done
 
       - name: Verify published assets
         shell: bash
