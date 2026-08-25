@@ -81,7 +81,7 @@ jobs:
       - name: Cache Rust
         uses: swatinem/rust-cache@v2
         with:
-          key: macos-${{ inputs.version }}-${{ matrix.asset_arch }}
+          key: macos-stable-${{ matrix.asset_arch }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
