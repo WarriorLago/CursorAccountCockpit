@@ -11,6 +11,11 @@ on:
         description: macOS version
         required: true
         default: 2.0.2
+      publish_release:
+        description: Publish GitHub Release after building
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -156,6 +161,7 @@ jobs:
 
   publish:
     name: Publish GitHub macOS release
+    if: ${{ inputs.publish_release }}
     needs: build
     runs-on: ubuntu-latest
     steps:
