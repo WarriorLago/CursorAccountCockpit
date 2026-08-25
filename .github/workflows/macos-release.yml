@@ -98,7 +98,9 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          npx tauri build --ci --bundles dmg --config '${{ matrix.config }}' --target '${{ matrix.rust_target }}'
+          # Keep the .app beside the DMG so the following architecture, minimum-OS,
+          # embedded Mach-O and code-signature checks inspect the exact bundle.
+          npx tauri build --ci --bundles app,dmg --config '${{ matrix.config }}' --target '${{ matrix.rust_target }}'
 
       - name: Verify bundle architecture and minimum OS
         shell: bash
