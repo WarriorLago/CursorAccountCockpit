@@ -108,8 +108,32 @@ jobs:
           set -euo pipefail
           bundle_root="target/${{ matrix.rust_target }}/release/bundle"
           app="$(find "$bundle_root/macos" -maxdepth 1 -name '*.app' -print -quit)"
+          dmg="$(find "$bundle_root/dmg" -maxdepth 1 -name '*.dmg' -print -quit)"
           test -n "$app"
+          test -s "$dmg"
+
+          # Tauri's certificate-free bundle can carry an incomplete ad-hoc resource
+          # envelope. Re-sign the complete .app, then put that exact verified bundle
+          # back into the styled DMG so both artifacts have consistent integrity.
+          codesign --force --deep --sign - "$app"
           bash scripts/release/verify_macos_bundle.sh "$app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
+
+          original_mount="$(mktemp -d)"
+          staged_volume="$(mktemp -d)"
+          rebuilt_dmg="${dmg%.dmg}-verified.dmg"
+          hdiutil attach "$dmg" -nobrowse -readonly -mountpoint "$original_mount"
+          ditto "$original_mount/" "$staged_volume/"
+          hdiutil detach "$original_mount"
+          ditto "$app" "$staged_volume/$(basename "$app")"
+          hdiutil create -volname "Cursor Account Cockpit" -srcfolder "$staged_volume" -ov -format UDZO "$rebuilt_dmg"
+          mv "$rebuilt_dmg" "$dmg"
+
+          verify_mount="$(mktemp -d)"
+          hdiutil attach "$dmg" -nobrowse -readonly -mountpoint "$verify_mount"
+          packaged_app="$(find "$verify_mount" -maxdepth 1 -name '*.app' -print -quit)"
+          test -n "$packaged_app"
+          bash scripts/release/verify_macos_bundle.sh "$packaged_app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
+          hdiutil detach "$verify_mount"
 
       - name: Stage versioned DMG
         shell: bash
