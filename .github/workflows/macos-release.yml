@@ -134,8 +134,10 @@ jobs:
           codesign --force --deep --sign - "$app"
           bash scripts/release/verify_macos_bundle.sh "$app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
 
-          original_mount="$(mktemp -d)"
-          staged_volume="$(mktemp -d)"
+          original_mount="$RUNNER_TEMP/cac-original-${{ matrix.asset_arch }}"
+          staged_volume="$RUNNER_TEMP/cac-stage-${{ matrix.asset_arch }}"
+          rm -rf "$original_mount" "$staged_volume"
+          mkdir -p "$original_mount" "$staged_volume"
           rebuilt_dmg="${dmg%.dmg}-verified.dmg"
           hdiutil attach "$dmg" -nobrowse -readonly -mountpoint "$original_mount"
           ditto "$original_mount/" "$staged_volume/"
@@ -144,12 +146,16 @@ jobs:
           hdiutil create -volname "Cursor Account Cockpit" -srcfolder "$staged_volume" -ov -format UDZO "$rebuilt_dmg"
           mv "$rebuilt_dmg" "$dmg"
 
-          verify_mount="$(mktemp -d)"
+          rm -rf "$original_mount" "$staged_volume"
+          verify_mount="$RUNNER_TEMP/cac-verify-${{ matrix.asset_arch }}"
+          rm -rf "$verify_mount"
+          mkdir -p "$verify_mount"
           hdiutil attach "$dmg" -nobrowse -readonly -mountpoint "$verify_mount"
           packaged_app="$(find "$verify_mount" -maxdepth 1 -name '*.app' -print -quit)"
           test -n "$packaged_app"
           bash scripts/release/verify_macos_bundle.sh "$packaged_app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
           hdiutil detach "$verify_mount"
+          rm -rf "$verify_mount"
 
       - name: Stage versioned DMG
         shell: bash
