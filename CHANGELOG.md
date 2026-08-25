@@ -1,5 +1,37 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Add native JSON drag-and-drop from Windows File Explorer and macOS Finder to the Cursor import window while keeping the file picker. Imports validate extension, the 32 MB limit, empty files, and JSON syntax first.
+
+### Fixed
+
+- Remove the regression-prone `includeSecrets` object/boolean argument from `export_cursor_accounts`; cross-device transfers now always use the dedicated credential-preflight export command.
+- Route the website's primary download button to the macOS Universal DMG or Windows EXE after platform detection, keep it on the package chooser before detection, and retain explicit downloads for both platforms.
+
+## macOS [2.0.2] - 2026-08-24
+
+### Fixed
+
+- Pin Apple Silicon and Universal builds to macOS 11.0, and the Intel-only build to macOS 10.15, covering M1–M5 and Intel Macs from Catalina onward.
+- Pin the macOS build image instead of following `macos-latest`, avoiding SDK drift across release builds.
+- Add pre-release validation for bundle minimum OS, every embedded Mach-O architecture, signature integrity, and an eight-second launch smoke test.
+- Correct the macOS bundle product name and wire Apple Developer signing/notarization credentials into the release build.
+
+### Released
+
+- Advance the independent macOS version line to `2.0.2`; Windows remains on `0.2.41`.
+
+## macOS [2.0.1] - 2026-08-23
+
+### Released
+
+- macOS now has an independent version line managed by `release/platform-versions.json` (`macos: 2.0.1`).
+- macOS uses `/cursor-account-cockpit/updates/macos/latest.json`; Windows remains on `/cursor-account-cockpit/updates/windows/latest.json`.
+- The macOS OTA artifact is a Universal DMG; the client verifies its size and SHA-256 before replacing and relaunching the app.
+
 ## [0.2.41] - 2026-08-21
 
 ### Fixed

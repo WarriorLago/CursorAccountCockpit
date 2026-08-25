@@ -1,5 +1,37 @@
 # 更新日志
 
+## 未发布
+
+### 新增
+
+- Cursor JSON 导入窗口支持 Windows 资源管理器与 macOS Finder 原生拖拽，同时保留点击选择文件；导入前会检查扩展名、32 MB 大小限制、空文件与 JSON 格式。
+
+### 修复
+
+- 移除 `export_cursor_accounts` 容易发生对象/布尔值错配的 `includeSecrets` 参数；跨设备迁移统一走固定包含凭据并执行预检的专用导出命令。
+- 官网首页下载按钮现在根据 macOS / Windows 选择 Universal DMG 或 EXE；检测完成前保持在下载选择页，并始终展示两个平台的明确入口。
+
+## macOS [2.0.2] - 2026-08-24
+
+### 修复
+
+- 将 Apple Silicon / Universal 构建最低系统固定为 macOS 11.0，将 Intel 专用构建最低系统固定为 macOS 10.15，覆盖 M1–M5 与 Catalina 之后的 Intel Mac。
+- 固定 macOS 构建镜像，避免 `macos-latest` 自动切换 SDK 后造成不同系统版本表现不一致。
+- 新增发布前架构、最低系统、内置 Mach-O、签名完整性与启动存活检查，防止 ARM 包混入 Intel-only 可执行文件。
+- 修正 macOS 应用包内的产品显示名称，并为 Apple Developer 签名与公证接入独立发布凭据。
+
+### 发布
+
+- macOS 独立版本号更新到 `2.0.2`；Windows 继续保持 `0.2.41`。
+
+## macOS [2.0.1] - 2026-08-23
+
+### 发布
+
+- macOS 版本号独立于 Windows 管理，使用 `release/platform-versions.json` 中的 `macos: 2.0.1`。
+- macOS 使用独立 OTA 清单 `/cursor-account-cockpit/updates/macos/latest.json`，Windows 继续使用 `/cursor-account-cockpit/updates/windows/latest.json`。
+- macOS OTA 目标为 Universal DMG，客户端会校验文件大小与 SHA-256 后执行替换并重新启动。
+
 ## [0.2.41] - 2026-08-21
 
 ### 修复

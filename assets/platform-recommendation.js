@@ -1,14 +1,39 @@
 (function () {
   var root = document.getElementById("platform-recommendation");
-  if (!root) return;
-
   var lang = document.documentElement.lang === "en" ? "en" : "zh";
-  var isMac = /Macintosh|Mac OS X|Mac_PowerPC/i.test(navigator.userAgent) || /Mac/i.test(navigator.platform || "");
-  var isWindows = /Windows/i.test(navigator.userAgent) || /Win/i.test(navigator.platform || "");
+  var browserPlatform = navigator.userAgentData && navigator.userAgentData.platform || navigator.platform || "";
+  var browserSignature = [browserPlatform, navigator.userAgent || ""].join(" ");
+  var isMac = /macOS|Macintosh|Mac OS X|MacIntel|Mac_PowerPC/i.test(browserSignature);
+  var isWindows = /Windows|Win32|Win64|WOW64/i.test(browserSignature);
   var platform = isMac ? "macos" : isWindows ? "windows" : "other";
   var dataUrl = new URL("platform-releases.json", document.currentScript && document.currentScript.src || location.href);
 
+  function updateSmartDownloads(data) {
+    var links = document.querySelectorAll("[data-smart-download]");
+    links.forEach(function (link) {
+      if (platform === "macos") {
+        link.href = data.macos.universal;
+        link.textContent = lang === "en"
+          ? "Download macOS " + data.macos.version + " (Universal DMG)"
+          : "下载 macOS " + data.macos.version + "（通用 DMG）";
+        link.setAttribute("data-detected-platform", "macos");
+      } else if (platform === "windows") {
+        link.href = data.windows.setup;
+        link.textContent = lang === "en"
+          ? "Download Windows " + data.windows.version
+          : "下载 Windows " + data.windows.version + " 安装包";
+        link.setAttribute("data-detected-platform", "windows");
+      } else {
+        link.href = link.getAttribute("data-download-page") || "download.html";
+        link.textContent = lang === "en" ? "Choose a download" : "选择适合的版本";
+        link.setAttribute("data-detected-platform", "other");
+      }
+    });
+  }
+
   function render(data) {
+    updateSmartDownloads(data);
+    if (!root) return;
     var copy = lang === "en" ? {
       detected: platform === "other" ? "Platform not identified" : "Detected on this device",
       other: "You can download either platform below",
@@ -64,6 +89,7 @@
     .then(function (res) { if (!res.ok) throw new Error("HTTP " + res.status); return res.json(); })
     .then(render)
     .catch(function () {
+      if (!root) return;
       root.className = "platform-recommendation is-neutral";
       root.textContent = lang === "en" ? "Open Download to choose a package." : "请打开下载页选择安装包。";
     });
