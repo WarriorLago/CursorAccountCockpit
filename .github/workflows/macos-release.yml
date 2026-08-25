@@ -122,6 +122,12 @@ jobs:
           test -n "$app"
           test -s "$dmg"
 
+          executable_name="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleExecutable' "$app/Contents/Info.plist")"
+          executable="$app/Contents/MacOS/$executable_name"
+          test -x "$executable"
+          strings "$executable" | grep -F 'https://warriorlago.github.io/CursorAccountCockpit/updates/macos/latest.json'
+          strings "$executable" | grep -F '${{ matrix.update_key }}'
+
           # Tauri's certificate-free bundle can carry an incomplete ad-hoc resource
           # envelope. Re-sign the complete .app, then put that exact verified bundle
           # back into the styled DMG so both artifacts have consistent integrity.
