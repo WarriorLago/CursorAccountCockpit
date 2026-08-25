@@ -1,0 +1,216 @@
+name: macOS DMG Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Private source ref to build
+        required: true
+        default: main
+      version:
+        description: macOS version
+        required: true
+        default: 2.0.2
+
+permissions:
+  contents: write
+
+concurrency:
+  group: macos-release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build ${{ matrix.label }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: Apple Silicon
+            runner: macos-15
+            rust_target: aarch64-apple-darwin
+            asset_arch: arm64
+            verify_arch: arm64
+            minimum: "11.0"
+            config: src-tauri/tauri.macos-modern.conf.json
+          - label: Intel
+            runner: macos-15-intel
+            rust_target: x86_64-apple-darwin
+            asset_arch: x64
+            verify_arch: x86_64
+            minimum: "10.15"
+            config: src-tauri/tauri.macos-intel.conf.json
+          - label: Universal
+            runner: macos-15
+            rust_target: universal-apple-darwin
+            asset_arch: universal
+            verify_arch: universal
+            minimum: "11.0"
+            config: src-tauri/tauri.macos-modern.conf.json
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Checkout private source
+        uses: actions/checkout@v4
+        with:
+          repository: WarriorLago/CursorAccountCockpit-source
+          ref: ${{ inputs.source_ref }}
+          token: ${{ secrets.PRIVATE_SOURCE_TOKEN }}
+          persist-credentials: false
+
+      - name: Verify requested source version
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          test "$(node -p "require('./platform-versions.json').macos")" = "$VERSION"
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+
+      - name: Cache Rust
+        uses: swatinem/rust-cache@v2
+        with:
+          key: macos-2.0.2-${{ matrix.asset_arch }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync macOS version
+        env:
+          CURSOR_ACCOUNT_COCKPIT_PLATFORM: macos
+          CURSOR_ACCOUNT_COCKPIT_MACOS_UPDATE_MANIFEST_URL: https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v${{ inputs.version }}/macos-latest.json
+        run: npm run sync-version
+
+      - name: Build DMG
+        shell: bash
+        env:
+          CURSOR_ACCOUNT_COCKPIT_PLATFORM: macos
+          CURSOR_ACCOUNT_COCKPIT_MACOS_UPDATE_MANIFEST_URL: https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v${{ inputs.version }}/macos-latest.json
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          npx tauri build --ci --bundles dmg --config '${{ matrix.config }}' --target '${{ matrix.rust_target }}'
+
+      - name: Verify bundle architecture and minimum OS
+        shell: bash
+        run: |
+          set -euo pipefail
+          bundle_root="target/${{ matrix.rust_target }}/release/bundle"
+          app="$(find "$bundle_root/macos" -maxdepth 1 -name '*.app' -print -quit)"
+          test -n "$app"
+          bash scripts/release/verify_macos_bundle.sh "$app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
+
+      - name: Stage versioned DMG
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          bundle_root="target/${{ matrix.rust_target }}/release/bundle"
+          dmg="$(find "$bundle_root/dmg" -maxdepth 1 -name '*.dmg' -print -quit)"
+          test -s "$dmg"
+          mkdir -p release-output
+          cp "$dmg" "release-output/Cursor-Account-Cockpit-${VERSION}-macos-${{ matrix.asset_arch }}.dmg"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos-${{ matrix.asset_arch }}
+          path: release-output/*.dmg
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    name: Publish GitHub macOS release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: macos-*
+          path: dist
+          merge-multiple: true
+
+      - name: Generate checksums and macOS OTA manifest
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          cd dist
+          sha256sum Cursor-Account-Cockpit-${VERSION}-macos-*.dmg > Cursor-Account-Cockpit-${VERSION}-macOS-SHA256SUMS.txt
+          python3 - <<'PY'
+          import hashlib, json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          version = os.environ['VERSION']
+          repo = os.environ['REPO']
+          base = f"https://github.com/{repo}/releases/download/v{version}"
+          specs = {
+              'macos-universal-dmg': f'Cursor-Account-Cockpit-{version}-macos-universal.dmg',
+              'darwin-aarch64-app': f'Cursor-Account-Cockpit-{version}-macos-arm64.dmg',
+              'darwin-x86_64-app': f'Cursor-Account-Cockpit-{version}-macos-x64.dmg',
+          }
+          platforms = {}
+          for key, name in specs.items():
+              path = Path(name)
+              payload = path.read_bytes()
+              platforms[key] = {
+                  'url': f'{base}/{name}',
+                  'sha256': hashlib.sha256(payload).hexdigest(),
+                  'size': len(payload),
+              }
+          manifest = {
+              'version': version,
+              'publishedAt': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+              'notes': 'macOS 2.0.2: Intel, Apple Silicon and Universal compatibility release.',
+              'notesZh': 'macOS 2.0.2：适配 Intel、Apple Silicon 与 Universal，并固定最低系统版本。',
+              'platforms': platforms,
+          }
+          Path('macos-latest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+          cat Cursor-Account-Cockpit-${VERSION}-macOS-SHA256SUMS.txt
+          cat macos-latest.json
+
+      - name: Create or update GitHub Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          cat > release-notes.md <<'EOF'
+          ## macOS 2.0.2
+
+          - Apple Silicon（M1–M5）：macOS 11 及以上
+          - Intel Mac：macOS 10.15 及以上
+          - 同时提供 Apple Silicon、Intel 和 Universal DMG
+          - 发布前校验 Mach-O 架构、最低系统版本与代码签名完整性
+
+          Windows 继续使用独立版本线 `0.2.41`。
+          EOF
+          if gh release view "v${VERSION}" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "v${VERSION}" --repo "$GITHUB_REPOSITORY" --title "Cursor Account Cockpit macOS v${VERSION}" --notes-file release-notes.md --latest=false
+          else
+            gh release create "v${VERSION}" --repo "$GITHUB_REPOSITORY" --title "Cursor Account Cockpit macOS v${VERSION}" --notes-file release-notes.md --latest=false
+          fi
+          gh release upload "v${VERSION}" dist/* --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Verify published assets
+        shell: bash
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 -o published.json "https://github.com/${GITHUB_REPOSITORY}/releases/download/v${VERSION}/macos-latest.json"
+          jq -e --arg version "$VERSION" '.version == $version and .platforms["macos-universal-dmg"] and .platforms["darwin-aarch64-app"] and .platforms["darwin-x86_64-app"]' published.json >/dev/null
