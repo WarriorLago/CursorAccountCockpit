@@ -1,23 +1,23 @@
 {
-  "version": "2.0.2",
-  "publishedAt": "2026-08-25T08:06:22Z",
-  "notes": "macOS 2.0.2: Intel, Apple Silicon and Universal compatibility release.",
-  "notesZh": "macOS 2.0.2：适配 Intel、Apple Silicon 与 Universal，并固定最低系统版本。",
+  "version": "2.0.5",
+  "publishedAt": "2026-08-26T01:30:00Z",
+  "notes": "Spin the Cursor account export icon during JSON export, and refresh all Cursor accounts once when the app process starts.",
+  "notesZh": "Cursor 账号导出时图标持续旋转；程序从关闭到启动时自动刷新全部 Cursor 账号，托盘再开窗口不会重复刷新。",
   "platforms": {
     "macos-universal-dmg": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.2/Cursor-Account-Cockpit-2.0.2-macos-universal.dmg",
-      "sha256": "e93f2c591317a85e10dd027930537479873c994a6bbf560610d2869f572bf0bd",
-      "size": 53257837
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg",
+      "sha256": "2769c403bc440e5eeac6391f07db14ac628c184e5e429c63adffce6c7d2c7da2",
+      "size": 53199216
     },
     "darwin-aarch64-app": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.2/Cursor-Account-Cockpit-2.0.2-macos-arm64.dmg",
-      "sha256": "1ad69c465c349c6ce8d76b1059c4746df9b71d199a6583b5e52949b83e796b1f",
-      "size": 25893902
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg",
+      "sha256": "6f9bce33e92d46f84d197ed592e9abd81b2511c974b21af35dd2f01ea8ab1b75",
+      "size": 25636060
     },
     "darwin-x86_64-app": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.2/Cursor-Account-Cockpit-2.0.2-macos-x64.dmg",
-      "sha256": "5c8b1cc2439f70b31a02a0d78f466a655186bdbc9a1367747d5348f44c438d98",
-      "size": 28066270
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg",
+      "sha256": "e4fb61ab223b80c55d850f35ba5c21e1a71c9cb27c0a12b194d65d8a3a79a15d",
+      "size": 27958169
     }
   }
 }
