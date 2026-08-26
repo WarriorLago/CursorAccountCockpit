@@ -20,7 +20,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 0.2.41</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 Windows 0.2.43</strong></a>
+  ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.5"><strong>macOS 2.0.5</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">全部版本</a>
   ·
@@ -39,7 +41,7 @@
 
 ## 这是什么
 
-Cursor Account Cockpit 是一个 **Windows 本地桌面应用**，专门服务 Cursor 多账号场景。你可以在一个窗口里：
+Cursor Account Cockpit 是一个 **Windows / macOS 本地桌面应用**，专门服务 Cursor 多账号场景。你可以在一个窗口里：
 
 - 集中管理多个 Cursor 账号
 - 实时查看 Total / Auto / API / On-Demand 用量
@@ -49,16 +51,20 @@ Cursor Account Cockpit 是一个 **Windows 本地桌面应用**，专门服务 C
 
 账号凭据保存在本机目录，不上传到本项目仓库。额度与账单请求直接发往 Cursor 官方域名。
 
-## 最新版本 0.2.41
+## 最新版本：Windows 0.2.43 · macOS 2.0.5
 
 请只从本仓库官方 Release 下载（下列为直链）：
 
 | 文件 | 说明 |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.41-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-0.2.41-x64-setup.exe) | Windows x64 安装包 |
-| [Cursor-Account-Cockpit-0.2.41-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-0.2.41-portable.exe) | Windows x64 便携版 |
-| [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/SHA256SUMS.txt) | SHA-256 校验 |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/latest.json) | 应用内更新清单 |
+| [Cursor-Account-Cockpit-0.2.43-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-x64-setup.exe) | Windows x64 安装包 |
+| [Cursor-Account-Cockpit-0.2.43-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-portable.exe) | Windows x64 便携版 |
+| [Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt) | Windows SHA-256 校验 |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/latest.json) | Windows 应用内更新清单 |
+| [Cursor-Account-Cockpit-2.0.5-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg) | macOS 通用 DMG（推荐） |
+| [Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg) | macOS Apple 芯片 |
+| [Cursor-Account-Cockpit-2.0.5-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg) | macOS Intel |
+| [macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/macos-latest.json) | macOS 应用内更新清单 |
 
 更多版本见 [项目下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html) 或 [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)。部分旧版本仅有源码 ZIP。
 
@@ -174,12 +180,13 @@ Token / JSON 面板支持：
 ## 环境要求
 
 - Windows 10 / 11 x64
+- macOS 11+（Apple 芯片 / 通用版）或 macOS 10.15+（Intel 专用包）
 - [WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)
 - 开发：Node.js 20+、Rust stable
 
 ## 安装与使用
 
-1. 从 [Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases/latest) 下载安装包或便携版
+1. 从 [Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases) 下载 Windows 安装包 / 便携版，或 macOS DMG
 2. 启动后先到「设置」确认 Cursor 安装路径
 3. 在「账号与额度」添加账号（OAuth / Token / 本地导入）
 4. 刷新额度，需要时一键切号

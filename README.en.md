@@ -20,7 +20,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download 0.2.41</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download Windows 0.2.43</strong></a>
+  ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.5"><strong>macOS 2.0.5</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">All releases</a>
   ·
@@ -39,7 +41,7 @@
 
 ## What it is
 
-Cursor Account Cockpit is a **Windows desktop app** built around real Cursor multi-account workflows. In one window you can:
+Cursor Account Cockpit is a **Windows / macOS desktop app** built around real Cursor multi-account workflows. In one window you can:
 
 - Manage multiple Cursor accounts
 - Monitor Total / Auto / API / On-Demand usage
@@ -49,16 +51,20 @@ Cursor Account Cockpit is a **Windows desktop app** built around real Cursor mul
 
 Credentials stay on your machine. Quota and billing requests go to official Cursor domains only.
 
-## Latest release 0.2.41
+## Latest release: Windows 0.2.43 · macOS 2.0.5
 
 Download only from this repo’s official Release assets (direct links):
 
 | File | Description |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.41-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-0.2.41-x64-setup.exe) | Windows x64 installer |
-| [Cursor-Account-Cockpit-0.2.41-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/Cursor-Account-Cockpit-0.2.41-portable.exe) | Windows x64 portable build |
-| [SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/SHA256SUMS.txt) | SHA-256 checksums |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.41/latest.json) | In-app update manifest |
+| [Cursor-Account-Cockpit-0.2.43-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-x64-setup.exe) | Windows x64 installer |
+| [Cursor-Account-Cockpit-0.2.43-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-portable.exe) | Windows x64 portable build |
+| [Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt) | Windows SHA-256 checksums |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/latest.json) | Windows in-app update manifest |
+| [Cursor-Account-Cockpit-2.0.5-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg) | macOS Universal DMG (recommended) |
+| [Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg) | macOS Apple Silicon |
+| [Cursor-Account-Cockpit-2.0.5-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg) | macOS Intel |
+| [macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/macos-latest.json) | macOS in-app update manifest |
 
 More versions: [project download page](https://warriorlago.github.io/CursorAccountCockpit/en/download.html) or [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases). Some older tags are source-only.
 
@@ -174,12 +180,13 @@ Settings covers day-to-day operations:
 ## Requirements
 
 - Windows 10 / 11 x64
+- macOS 11+ (Apple Silicon / Universal) or macOS 10.15+ (Intel-only package)
 - [WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)
 - Development: Node.js 20+, Rust stable
 
 ## Install & use
 
-1. Download the installer or portable build from [Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases/latest)
+1. Download the Windows installer / portable build or a macOS DMG from [Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)
 2. Confirm the Cursor install path in Settings
 3. Add accounts via OAuth / Token / local import
 4. Refresh quotas and switch accounts when needed

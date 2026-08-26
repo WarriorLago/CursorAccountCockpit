@@ -1,6 +1,24 @@
 # Changelog
 
-## Unreleased
+## Windows [0.2.43] / macOS [2.0.5] - 2026-08-26
+
+### Changed
+
+- Spin the Cursor account export icon for the whole JSON export so the toolbar does not look frozen.
+- Refresh every Cursor account once when the app process starts, and spin the refresh-all toolbar icon for that run. Opening the window from the tray does not refresh again.
+
+## macOS [2.0.4] - 2026-08-25
+
+### Fixed
+
+- Move macOS clients from a release-version-pinned manifest to a stable, independent HTTPS OTA channel that can advertise future releases.
+- Restore the Settings manual-update event handler so checks report up-to-date, update available, or a concrete error instead of leaving the button idle.
+- Record every successful manifest check, including up-to-date results, to avoid probing again on every launch.
+- Fall back from Apple Silicon/Intel package keys to the Universal DMG when a channel only publishes the universal artifact.
+- Probe the baked manifest first, then the stable GitHub Pages HTTPS channel and the GitHub raw mirror, and surface the failing URL in error text.
+- Verify the DMG app version and code signature before replacement, keep a backup during installation, restore it if the helper is interrupted, and roll back when replacement fails.
+
+## Windows [0.2.42] / macOS [2.0.3] - 2026-08-25
 
 ### Added
 
