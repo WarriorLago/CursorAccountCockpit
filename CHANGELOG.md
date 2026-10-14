@@ -1,5 +1,12 @@
 # Changelog
 
+## Windows [0.2.53] - 2026-10-14
+
+### Changed
+
+- Windows now checks for updates and downloads full installers through GitHub Releases over HTTPS.
+
+
 ## Windows [0.2.43] / macOS [2.0.5] - 2026-08-26
 
 ### Changed

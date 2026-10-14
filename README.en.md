@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download Windows 0.2.43</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download Windows 0.2.53</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.5"><strong>macOS 2.0.5</strong></a>
   ·
@@ -51,16 +51,16 @@ Cursor Account Cockpit is a **Windows / macOS desktop app** built around real Cu
 
 Credentials stay on your machine. Quota and billing requests go to official Cursor domains only.
 
-## Latest release: Windows 0.2.43 · macOS 2.0.5
+## Latest release: Windows 0.2.53 · macOS 2.0.5
 
 Download only from this repo’s official Release assets (direct links):
 
 | File | Description |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.43-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-x64-setup.exe) | Windows x64 installer |
-| [Cursor-Account-Cockpit-0.2.43-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-portable.exe) | Windows x64 portable build |
-| [Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt) | Windows SHA-256 checksums |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/latest.json) | Windows in-app update manifest |
+| [Cursor-Account-Cockpit-0.2.53-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/Cursor-Account-Cockpit-0.2.53-x64-setup.exe) | Windows x64 installer |
+| [Cursor-Account-Cockpit-0.2.53-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/Cursor-Account-Cockpit-0.2.53-portable.exe) | Windows x64 portable build |
+| [Cursor-Account-Cockpit-0.2.53-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/Cursor-Account-Cockpit-0.2.53-SHA256SUMS.txt) | Windows SHA-256 checksums |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/latest.json) | Windows in-app update manifest |
 | [Cursor-Account-Cockpit-2.0.5-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg) | macOS Universal DMG (recommended) |
 | [Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg) | macOS Apple Silicon |
 | [Cursor-Account-Cockpit-2.0.5-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg) | macOS Intel |

@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 Windows 0.2.43</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 Windows 0.2.53</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.5"><strong>macOS 2.0.5</strong></a>
   ·
@@ -51,16 +51,16 @@ Cursor Account Cockpit 是一个 **Windows / macOS 本地桌面应用**，专门
 
 账号凭据保存在本机目录，不上传到本项目仓库。额度与账单请求直接发往 Cursor 官方域名。
 
-## 最新版本：Windows 0.2.43 · macOS 2.0.5
+## 最新版本：Windows 0.2.53 · macOS 2.0.5
 
 请只从本仓库官方 Release 下载（下列为直链）：
 
 | 文件 | 说明 |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.43-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-x64-setup.exe) | Windows x64 安装包 |
-| [Cursor-Account-Cockpit-0.2.43-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-portable.exe) | Windows x64 便携版 |
-| [Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/Cursor-Account-Cockpit-0.2.43-SHA256SUMS.txt) | Windows SHA-256 校验 |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.43/latest.json) | Windows 应用内更新清单 |
+| [Cursor-Account-Cockpit-0.2.53-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/Cursor-Account-Cockpit-0.2.53-x64-setup.exe) | Windows x64 安装包 |
+| [Cursor-Account-Cockpit-0.2.53-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/Cursor-Account-Cockpit-0.2.53-portable.exe) | Windows x64 便携版 |
+| [Cursor-Account-Cockpit-0.2.53-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/Cursor-Account-Cockpit-0.2.53-SHA256SUMS.txt) | Windows SHA-256 校验 |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.53/latest.json) | Windows 应用内更新清单 |
 | [Cursor-Account-Cockpit-2.0.5-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg) | macOS 通用 DMG（推荐） |
 | [Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg) | macOS Apple 芯片 |
 | [Cursor-Account-Cockpit-2.0.5-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg) | macOS Intel |
