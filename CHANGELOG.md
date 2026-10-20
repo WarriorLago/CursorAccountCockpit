@@ -1,11 +1,134 @@
 # Changelog
 
+## Windows [0.2.57] - 2026-10-20
+
+### Fixed
+
+- Cursor cross-device export checks accounts individually, skips expired or incomplete credentials, and continues exporting valid accounts.
+- The export dialog shows selected, exported, and expired/skipped counts. The JSON remains directly importable as an account array.
+
+## Windows [0.2.56] - 2026-10-20
+
+### Fixed
+
+- Check Cursor's refresh response, including `shouldLogout`, before switching accounts. Expired authorization no longer reports a successful switch or overwrites a valid local session.
+- Preserve the actual refresh credential returned by Cursor. Show expired authorization clearly and hide stale quota data.
+- Verify the installed application version and the active Cursor session when validating an account switch.
+
+## Windows [0.2.55] - 2026-10-14
+
+### Fixed
+
+- Match Cursor 3.x's current session model by writing the verified session token as both accessToken and refreshToken, preventing startup from exchanging an expired legacy refresh token and logging out.
+- Wait for Cursor authentication to settle after launch and verify the local session and official user identity repeatedly; cleared credentials or a mismatched account now fail the switch explicitly.
+
+## Windows [0.2.54] - 2026-10-14
+
+### Fixed
+
+- Fix Cursor reopening with the previous account after a switch by clearing Cursor 3.x account profile, team, and subscription caches and synchronizing the selected identity.
+- Validate account credentials before switching and refresh them when possible. Expired accounts now stop the switch with a clear error instead of closing Cursor and reporting success.
+- Write authentication state in a transaction and read it back; the app updates its current-account state only after the write, launch, and post-launch verification all succeed.
+
 ## Windows [0.2.53] - 2026-10-14
 
 ### Changed
 
 - Windows now checks for updates and downloads full installers through GitHub Releases over HTTPS.
 
+## Windows [0.2.52] - 2026-09-15
+
+### Added
+
+- Add a card view to the run archive that renders every result as a thumbnail up front, instead of one click per preview. The choice is remembered.
+- Retry cancelled or failed cells: check several and re-run them together, or retry a single one on its own.
+- A retry can be pointed at another account, for when the original one ran out of quota. It reuses the archived prompt and overwrites the same cell, so no second archive entry appears.
+- Retry progress is shown inside the detail panel and can be cancelled at any time.
+
+### Fixed
+
+- Loading an archive for comparison no longer puts cancelled or empty cells into the gallery, and the notice reports how many were skipped.
+- The detail table no longer labels an unfinished cell's source as "no renderable content", and its open button no longer points at an empty artifact.
+- Archive summaries count cancellations apart from failures, instead of blaming a model for a run the user stopped.
+- Fix a failed start caused by "a test is already running" clearing the run state, which left the running batch impossible to cancel.
+
+## Windows [0.2.51] - 2026-09-15
+
+### Added
+
+- Add the Pelican Benchmark: send one prompt to the models of the selected accounts, ask for a self-contained HTML document, and render the answers in-app with zoom and side-by-side comparison of up to four results.
+- Pair accounts and models freely, from a single account and model up to a batch across many of both. Every account runs through its own isolated worker, leaving a running API service untouched.
+- Ship presets for the latest and three prior generations from each vendor (OpenAI, Anthropic, xAI, Google, Cursor, Kimi, GLM), with search, hand-typed Model IDs, and one-click copying of one account's model list to every selected account.
+- Archive each run and its HTML artifacts in the local data directory. History entries expand into per-task account, model, status, latency, output size, extraction source, and raw response, with direct preview or open-in-browser.
+- Render inside a sandboxed iframe without same-origin access and inject a strict CSP, so a generated document cannot reach the network.
+
+### Fixed
+
+- Cancelling a batch now aborts the requests in flight instead of waiting for each one to hit its timeout.
+- Results of a running batch survive navigating away and back, and the bench remembers its selection, prompt, concurrency, and timeout.
+- A batch is archived as it progresses, so the completed part remains available even if the app exits mid-run.
+
+## Windows [0.2.50] - 2026-09-08
+
+### Added
+
+- Add one-click Cursor IDE configuration that writes the local API service into the IDE settings.
+
+### Fixed
+
+- Use the correct application icon for installers and portable builds.
+
+## Windows [0.2.49] - 2026-09-01
+
+### Added
+
+- Show the active model name and exact Model ID in the overview and model catalog.
+- Add searchable model selection with one-click default switching and a temporary model selector for API tests.
+- Add one-click copying of Base URL, Model, and API Key plus a recent latency/success visualization.
+
+## Windows [0.2.48] - 2026-09-01
+
+### Fixed
+
+- Stop this app's leftover Cursor Agent / Proxy processes before installation so locked `.node` files no longer block upgrades.
+- Run portable builds in an isolated instance mode so they can open beside an installed copy instead of exiting on the global single-instance gate.
+- Pass `--portable` from the launcher and clean the temporary extracted resource tree after exit.
+
+## Windows [0.2.47] - 2026-09-01
+
+### Fixed
+
+- Repair the bundled Cursor Agent ACP adapter for trusted chat-only workspaces, `auto`/`default[]` model selection, session mode configuration, error propagation, and structured tool-call continuations.
+- Retry ordinary conversations through the non-ACP Cursor Agent path when ACP fails before its first output; tool-bearing requests preserve ACP semantics and now return the concrete ACP diagnostic.
+- Mark workers ready only after `/health` and a real non-empty `/v1/models` catalog both succeed. Model failures now return a categorized HTTP 503 instead of a fabricated `auto` entry.
+
+### Added
+
+- Persist the loopback port, account pool, default model, ACP settings, and gateway API key in local encrypted storage, including atomic key rotation.
+- Add basic and full isolated diagnostics using a random loopback port, temporary configuration root, and separate process tree. Full diagnostics cover OpenAI, Anthropic, Responses, SSE, and a required tool-call/result round trip without changing the formal service.
+- Capture bounded, redacted Worker/ACP diagnostics and show Agent/Proxy versions, model count, stage status, and latency in the service page.
+
+## Windows [0.2.46] - 2026-08-29
+
+### Fixed
+
+- Merge Cursor API start and stop into one stateful button: it shows Start Service while stopped and switches in place to Stop Service after startup succeeds.
+- Show a spinner and Starting, Stopping, or Restarting text during transitions, mirror that transition in the status badge, and prevent duplicate clicks.
+- Give the running-state Stop Service action a clear stop style so a successful startup no longer looks like an ignored click.
+
+## Windows [0.2.45] - 2026-08-29
+
+### Added
+
+- Add a loopback Cursor API service backed by the selected Cursor account pool, with OpenAI Chat Completions, Anthropic Messages, and Responses-compatible endpoints.
+- Bundle Cursor Agent CLI, the Node.js runtime, and `cursor-api-proxy` in the Windows package so first use no longer downloads the npm package.
+
+### Improved
+
+- Validate the account pool, access tokens, bundled runtimes, and ports before startup; only mark workers running after a health check and return per-worker diagnostics when startup fails.
+- Add least-active round-robin routing, failure cooldown and one retry on another worker, automatic worker-port selection, and loopback proxy bypass.
+- Reduce the default worker startup wait to five seconds, set the request timeout to 45 seconds, and fully reap worker processes and the listener thread when stopping.
+- Show empty-pool guidance, runtime diagnostics, and clearer startup state on the Cursor API service page.
 
 ## Windows [0.2.43] / macOS [2.0.5] - 2026-08-26
 
