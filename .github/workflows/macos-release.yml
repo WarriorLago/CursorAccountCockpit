@@ -10,7 +10,7 @@ on:
       version:
         description: macOS version
         required: true
-        default: 2.0.2
+        default: 2.0.6
       publish_release:
         description: Publish GitHub Release after building
         required: true
@@ -92,6 +92,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install proxy runtime dependencies
+        run: npm ci --prefix sidecars/cursor-api-proxy/package --omit=dev --ignore-scripts
+
       - name: Sync macOS version
         env:
           CURSOR_ACCOUNT_COCKPIT_PLATFORM: macos
@@ -128,11 +131,15 @@ jobs:
           strings "$executable" | grep -F 'https://warriorlago.github.io/CursorAccountCockpit/updates/macos/latest.json'
           strings "$executable" | grep -F '${{ matrix.update_key }}'
 
+          test -f "$app/Contents/Resources/cursor-api-proxy/package/dist/cli.js"
+          test -d "$app/Contents/Resources/cursor-api-proxy/package/node_modules/@modelcontextprotocol/sdk"
+          test ! -e "$app/Contents/Resources/cursor-agent"
+
           # Tauri's certificate-free bundle can carry an incomplete ad-hoc resource
           # envelope. Re-sign the complete .app, then put that exact verified bundle
           # back into the styled DMG so both artifacts have consistent integrity.
           codesign --force --deep --sign - "$app"
-          bash scripts/release/verify_macos_bundle.sh "$app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
+          COCKPIT_MACOS_SMOKE_LAUNCH=1 bash scripts/release/verify_macos_bundle.sh "$app" '${{ matrix.verify_arch }}' '${{ matrix.minimum }}'
 
           original_mount="$RUNNER_TEMP/cac-original-${{ matrix.asset_arch }}"
           staged_volume="$RUNNER_TEMP/cac-stage-${{ matrix.asset_arch }}"
