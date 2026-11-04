@@ -4,111 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>下载 · Cursor Account Cockpit</title>
-  <meta name="description" content="下载 Cursor Account Cockpit：GitHub Release 安装包与便携版直链。" />
+  <meta name="description" content="下载 Windows 0.2.63 和 macOS 2.0.6。" />
+  <meta property="og:title" content="下载 · Cursor Account Cockpit" />
+  <meta property="og:description" content="下载 Windows 0.2.63 和 macOS 2.0.6。" />
+  <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="assets/potato.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260826img2" />
+  <link rel="stylesheet" href="assets/site.css?v=20261104" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topnav">
-      <a class="brand" href="./">
-        <span class="brand-mark"><img src="assets/potato.svg" alt="" width="48" height="48" /></span>
-        <span>
-          <strong>Cursor Account Cockpit</strong>
-          <em>下载</em>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="./">首页</a>
-        <a href="features.html">功能</a>
-        <a class="active" href="download.html">下载</a>
-        <a href="./#contact">联系</a>
-        <a href="./#tip">赞赏</a>
-        <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
-        <a class="lang-switch" href="en/download.html">EN</a>
-      </nav>
-    </header>
-
-    <section class="section"><div class="section-head"><h2>Windows 0.2.63 · macOS 2.0.6</h2><p>集中对比全部账号用量，按时间分页查看请求，关注非工作时间活动。团队成员使用独立 API Key，可设置模型范围、到期日、每日和每分钟限额，并在本机查看请求元数据。鹈鹕测试台支持实时进度、盲评、排行与 HTML 结果分享。共享账号的登录会话数量不等于实时使用人数，成员 Key 更适合用量归属。</p></div><p>macOS 的账号与额度管理可直接使用；团队 API 网关与鹈鹕测试需安装 Node.js 20+ 和官方 Cursor Agent CLI。支持从 Finder 识别常用安装目录，也可在设置中指定路径。DMG 使用 ad-hoc 签名，尚未经过 Apple Developer ID 签名和公证。</p></section>
-
-    <section class="hero">
-      <div class="hero-brand">
-        <div class="hero-potato"><img src="assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
-        <div>
-          <h1>下载 Windows 与 macOS 版</h1>
-          <p>页面会检测当前平台，并提示适合的安装包</p>
-        </div>
-      </div>
-      <p class="lead">
-        Windows 最新正式版为 <strong>0.2.63</strong>，macOS 独立版本为 <strong>2.0.6</strong>。下方列表按 GitHub Releases 真实附件显示。
-      </p>
-      <div id="platform-recommendation" aria-live="polite"><span>正在检测当前平台…</span></div>
-    </section>
-
-    <section class="section" style="padding-top:0">
-      <div class="panel deep">
-        <h2>Windows 0.2.63 与 macOS 2.0.6</h2>
-        <p>以下链接已核对，Windows 与 macOS 安装包始终同时展示。</p>
-        <div class="dl-grid">
-          <div class="dl-item">
-            <div>
-              <strong>Windows 安装包</strong>
-              <span>Cursor-Account-Cockpit-0.2.63-x64-setup.exe</span>
-            </div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe">下载安装包</a>
-          </div>
-          <div class="dl-item">
-            <div>
-              <strong>Windows 便携版</strong>
-              <span>Cursor-Account-Cockpit-0.2.63-portable.exe</span>
-            </div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe">下载便携版</a>
-          </div>
-          <div class="dl-item">
-            <div>
-              <strong>SHA-256 校验</strong>
-              <span>Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt</span>
-            </div>
-            <a class="btn btn-ghost" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt">下载校验文件</a>
-          </div>
-          <div class="dl-item">
-            <div>
-              <strong>macOS 通用 DMG（推荐）</strong>
-              <span>Cursor-Account-Cockpit-2.0.6-macos-universal.dmg</span>
-            </div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg">下载 macOS</a>
-          </div>
-        </div>
-        <p class="note" style="color:rgba(255,247,236,0.7);margin-top:14px">
-          校验示例：<code>Get-FileHash .\Cursor-Account-Cockpit-0.2.63-x64-setup.exe -Algorithm SHA256</code>
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>全部已发布版本</h2>
-        <p>从 GitHub API 实时读取每个 Release 的安装包与便携版附件。</p>
-        <p id="download-stats" class="note" style="margin-top:8px">正在统计下载量…</p>
-      </div>
-      <div id="release-list" data-lang="zh" class="release-list"></div>
-      <p class="note">
-        若列表加载失败，请直接打开
-        <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">GitHub Releases</a>。
-      </p>
-    </section>
-
-    <footer class="site-footer">
-      <div class="row">
-        <span><a href="./">← 返回首页</a></span>
-        <a href="en/download.html">English</a>
-      </div>
-    </footer>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./"><img src="assets/potato.svg" alt="" width="30" height="30" /><span>Cursor Account Cockpit</span></a>
+    <nav aria-label="主导航">
+      <a href="features.html">功能</a><a href="download.html" aria-current="page">下载</a>
+      <a class="nav-extra" href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/CHANGELOG.zh-CN.md">更新日志</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
+      <a class="lang" href="en/download.html" hreflang="en">EN</a>
+    </nav>
   </div>
-  <script src="assets/releases.js" defer></script>
-  <script src="assets/platform-recommendation.js?v=20260825dnd1" defer></script>
+</header>
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <h1>下载</h1>
+    <p class="lead">Windows 0.2.63 · macOS 2.0.6</p>
+    <div id="platform-recommendation" aria-live="polite"><span>正在检测当前平台…</span></div>
+  </div>
+</section>
+<section class="section section-tight">
+  <div class="wrap">
+    <h2 class="section-title">全部安装包</h2>
+    <div class="dl-table"><div class="dl-row"><div><strong>Windows 安装包</strong><span>Cursor-Account-Cockpit-0.2.63-x64-setup.exe</span></div><a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe">下载</a></div><div class="dl-row"><div><strong>Windows 便携版</strong><span>Cursor-Account-Cockpit-0.2.63-portable.exe</span></div><a class="btn" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe">下载</a></div><div class="dl-row"><div><strong>macOS 通用版（推荐）</strong><span>Cursor-Account-Cockpit-2.0.6-macos-universal.dmg</span></div><a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg">下载</a></div><div class="dl-row"><div><strong>macOS Apple 芯片</strong><span>Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg</span></div><a class="btn" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg">下载</a></div><div class="dl-row"><div><strong>macOS Intel</strong><span>Cursor-Account-Cockpit-2.0.6-macos-x64.dmg</span></div><a class="btn" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg">下载</a></div></div>
+    <p class="fine"><a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt">Windows SHA-256 校验文件</a> · 请只从本页或 GitHub Releases 下载。</p>
+    <div class="notes">
+  <article>
+    <h3>Windows</h3>
+    <p>支持 Windows 10 / 11 x64，需要 WebView2（系统通常已自带）。便携版不用安装，首次运行会解压到本机。</p>
+  </article>
+  <article>
+    <h3>macOS</h3>
+    <p>账号与额度可以直接用。API 服务和鹈鹕测试需要先装 Node.js 20+ 和官方 Cursor Agent CLI。DMG 使用临时签名，没有经过 Apple 公证，首次打开可能要到“系统设置 → 隐私与安全性”里允许。</p>
+  </article>
+</div>
+  </div>
+</section>
+<section class="section section-tight">
+  <div class="wrap">
+    <h2 class="section-title">历史版本</h2>
+    <p class="fine" id="download-stats"></p>
+    <div id="release-list" data-lang="zh"></div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>Cursor Account Cockpit</strong>
+      <p>由 Warrior Ma 维护。基于 cockpit-tools 继续开发，按 CC BY-NC-SA 4.0 授权。</p>
+      <p>这不是 Cursor 官方产品，与 Anysphere 没有关联。</p>
+    </div>
+    <div class="footer-links">
+      <a href="features.html">功能</a>
+      <a href="download.html">下载</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">全部版本</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/issues">反馈问题</a>
+      <a href="./#author">联系作者</a>
+    </div>
+  </div>
+</footer>
+  <script src="assets/platform-recommendation.js?v=20261104" defer></script>
+  <script src="assets/releases.js?v=20261104" defer></script>
+  <script src="assets/site.js?v=20261104" defer></script>
 </body>
 </html>

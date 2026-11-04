@@ -1,246 +1,88 @@
-<p align="center">
-  <a href="./README.md">简体中文</a> · <strong>English</strong>
-</p>
+<p align="center"><a href="./README.md">简体中文</a> · <strong>English</strong></p>
 
-<p align="center">
-  <img src="./src-tauri/icons/potato.svg" alt="Cursor Account Cockpit" width="96" height="96">
-</p>
+<p align="center"><img src="./src-tauri/icons/potato.svg" alt="" width="84" height="84"></p>
 
 <h1 align="center">Cursor Account Cockpit</h1>
 
+<p align="center">Every Cursor account, clear in one window.<br>Quota, switching, where the money goes and team keys, all managed on your own computer.</p>
+
 <p align="center">
-  A Cursor-focused local desktop console for multi-account management, quota monitoring, one-click switching, session browsing, and official invoice / receipt export.
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><img alt="release" src="https://img.shields.io/github/v/release/WarriorLago/CursorAccountCockpit?label=release&color=0f766e"></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases"><img alt="downloads" src="https://img.shields.io/github/downloads/WarriorLago/CursorAccountCockpit/total?color=0f766e"></a>
+  <a href="./LICENSE"><img alt="license" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/WarriorLago/CursorAccountCockpit?label=release&color=2ea44f"></a>
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/WarriorLago/CursorAccountCockpit/total?label=downloads&color=0e8a16"></a>
-  <a href="./LICENSE"><img alt="License" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey"></a>
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/WarriorLago/CursorAccountCockpit?style=social"></a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>Download Windows 0.2.63</strong></a>
-  ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.6"><strong>macOS 2.0.6</strong></a>
-  ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">All releases</a>
-  ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe"><strong>Download for Windows 0.2.63</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg"><strong>Download for macOS 2.0.6</strong></a> ·
+  <a href="https://warriorlago.github.io/CursorAccountCockpit/en/">Website</a> ·
+  <a href="https://warriorlago.github.io/CursorAccountCockpit/en/features.html">Features</a> ·
   <a href="./CHANGELOG.md">Changelog</a>
-  ·
-  <a href="./docs/SUPPORT.en.md">Support</a>
-  ·
-  <a href="https://warriorlago.github.io/CursorAccountCockpit/en/">Project site</a>
-  ·
-  <a href="https://warriorlago.github.io/CursorAccountCockpit/en/features.html">Features</a>
 </p>
 
-<p align="center">
-  <img src="./docs/images/accounts.png" alt="Accounts and quota overview" width="920">
-</p>
+<p align="center"><img src="./docs/images/accounts.png" alt="Accounts and quota" width="920"></p>
 
-## What it is
+> This is not an official Cursor product and is not affiliated with Anysphere. Some features rely on internal Cursor endpoints, so a change at Cursor can require an update here.
 
-Cursor Account Cockpit is a **Windows / macOS desktop app** built around real Cursor multi-account workflows. In one window you can:
+## What it does
 
-- Manage multiple Cursor accounts
-- Monitor Total / Auto / API / On-Demand usage
-- Switch accounts and restart Cursor in one click
-- Export official invoices and receipts by month
-- Browse local Agent sessions read-only and export Markdown
+### Accounts and quota
 
-Credentials stay on your machine. Quota and billing requests go to official Cursor domains only.
+Every account's plan, usage and reset time in one table. Switching writes the login, restarts Cursor and confirms the result, and expired accounts are stopped first. Import through OAuth, a token or the local Cursor login.
 
-## Latest release: Windows 0.2.63 · macOS 2.0.6
+<p align="center"><img src="./docs/images/accounts-cards.png" alt="Accounts and quota" width="860"></p>
 
-Download only from this repo’s official Release assets (direct links):
+### Usage insights
 
-| File | Description |
+Cost is split into API quota, Auto quota and real charges, then checked against Cursor's own percentages. A daily trend and time map show when usage happens, with configurable working hours and holidays. Only time, model, tokens and cost are stored, never conversations.
+
+<p align="center"><img src="./docs/images/usage.png" alt="Usage insights" width="860"></p>
+
+### Team gateway
+
+Turn the account pool into a local API compatible with OpenAI, Anthropic and Responses. Give each person a key with daily and per-minute limits, allowed models and an expiry date, then see requests and source IPs per key. Failover is automatic, and it listens on this computer by default.
+
+<p align="center"><img src="./docs/images/gateway-keys.png" alt="Team gateway" width="860"></p>
+
+### Pelican bench
+
+One prompt goes to many models, the results render side by side in a sandbox, and your scores feed a leaderboard. Blind mode reveals the model only after you score it, and a run can be exported as a single HTML file.
+
+<p align="center"><img src="./docs/images/pelican.png" alt="Pelican bench" width="860"></p>
+
+### And also
+
+- **Official invoices and receipts**：Export official PDFs in bulk by account and month.
+- **Local sessions**：Browse Agent conversations on this computer read-only, search them and export to Markdown.
+- **Usage notices**：Notices for heavy off-hours use and daily spikes, off by default.
+- **In-app updates**：New versions download from GitHub Releases and are verified.
+
+## Download
+
+| Platform | File |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.63-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe) | Windows x64 installer |
-| [Cursor-Account-Cockpit-0.2.63-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe) | Windows x64 portable build |
-| [Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt) | Windows SHA-256 checksums |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/latest.json) | Windows in-app update manifest |
-| [Cursor-Account-Cockpit-2.0.6-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg) | macOS Universal DMG (recommended) |
-| [Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg) | macOS Apple Silicon |
-| [Cursor-Account-Cockpit-2.0.6-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg) | macOS Intel |
-| [macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/macos-latest.json) | macOS in-app update manifest |
+| Windows 10 / 11 x64 | [Installer](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe) · [Portable](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe) |
+| macOS 11+ (Universal) | [Universal DMG (recommended)](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg) |
+| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg) |
 
-More versions: [project download page](https://warriorlago.github.io/CursorAccountCockpit/en/download.html) or [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases). Some older tags are source-only.
+Other versions and checksums are on [the download page](https://warriorlago.github.io/CursorAccountCockpit/en/download.html).
 
-## This release
+On macOS, the API service and pelican bench also need Node.js 20+ and the official Cursor Agent CLI. The DMG is ad-hoc signed and not notarized, so the first launch may need approval in System Settings → Privacy & Security.
 
-Compare all accounts, browse paginated chronological requests and inspect after-hours activity. Assign individual API keys with model permissions, expiry, daily and per-minute limits, and inspect request metadata locally. The pelican bench adds live progress, blind review, ratings and HTML galleries. Login sessions do not measure concurrent people; individual keys provide clearer usage attribution.
+## Where your data goes
 
-macOS account and quota management works without extra runtimes. The team API gateway and pelican bench require Node.js 20+ and the official Cursor Agent CLI. Finder launches discover common installation directories; explicit paths can be set in Settings. DMGs are ad-hoc signed, without Apple Developer ID signing or notarization.
-
----
-
-## Features in detail
-
-### 1. Accounts & quota overview
-
-<p align="center">
-  <img src="./docs/images/accounts.png" alt="Account list view: email, plan, usage, and actions on one row" width="920">
-</p>
-
-<p align="center">
-  <img src="./docs/images/accounts-cards.png" alt="Account card view with plan badges and usage bars" width="920">
-</p>
-
-The home page supports **list** and **card** layouts. Prefer the list on wide windows so email, plan, usage, and actions stay on one complete row; use cards for a quick visual scan.
-
-Day-to-day capabilities:
-
-- **Search / filter / sort** by email, plan, tags, or creation time
-- **Plan badges** for FREE, PRO, PRO+, ULTRA, trial, and more
-- **Quota visuals** for total usage, Auto + Composer, API usage, and On-Demand
-- **Billing-cycle reset time** with full tooltip on hover / focus
-- **Tags and notes** for organizing accounts locally
-- **Bulk actions** for select-all, export, and delete
-
-Quick actions: switch into Cursor, open billing, edit tags / notes, refresh quota, export, delete.
-
-### 2. Multiple ways to add accounts
-
-<p align="center">
-  <img src="./docs/images/add-account.png" alt="Add account: OAuth / Token / local import" width="720">
-</p>
-
-“Add account” supports three import paths:
-
-| Method | Best for |
+| | |
 | --- | --- |
-| **OAuth** | Browser-based official login |
-| **Token / JSON** | Pasting Access Token (JWT) or exported JSON, including batch import |
-| **Local import** | Reading the currently signed-in Cursor session on this machine |
+| **Account credentials** | Encrypted in the local data folder and only used to call Cursor's own services |
+| **Usage records** | Only time, model, tokens and cost, never conversations, and you can clear them at any time |
+| **Gateway logs** | Only key, source IP, model, status and latency, never prompts or answers |
+| **Network requests** | Cursor's services, Stripe invoice files and GitHub updates. Holiday data is fetched only when you ask |
+| **Data sent to the author** | None. This project has no servers of its own |
 
-<p align="center">
-  <img src="./docs/images/token-import.png" alt="Token / JSON import panel" width="720">
-</p>
+Sharing an account or routing through a gateway may not comply with Cursor's terms and can trigger risk controls, so please judge this for yourself.
 
-Token / JSON import supports:
+## Author and license
 
-- Single JWT paste
-- JSON object / array batch import
-- Expandable required-field examples
+Maintained by **Warrior Ma**. For questions or collaboration, you can [open an issue](https://github.com/WarriorLago/CursorAccountCockpit/issues), email [warriorlago@163.com](mailto:warriorlago@163.com), or find the WeChat QR code on [the website](https://warriorlago.github.io/CursorAccountCockpit/en/#author). If it helped you, you can also [support the project](./docs/SUPPORT.md).
 
-### 3. One-click account switching
-
-When you click “Switch to Cursor”, the app:
-
-1. Writes the selected account into local Cursor auth storage
-2. Closes the previous Cursor process
-3. Relaunches Cursor from the path configured in Settings
-
-The new session takes effect immediately without manual re-login.
-
-### 4. Official invoices & receipts
-
-<p align="center">
-  <img src="./docs/images/billing.png" alt="Official billing export panel" width="920">
-</p>
-
-For month-end review or cost allocation, open **Official Invoice / Official Receipt** from the toolbar, or jump into billing from an account row:
-
-1. **Pick accounts** — one or more saved accounts (isolated per account)
-2. **Pick months** — start/end month, including cross-month and cross-year ranges
-3. **Filter status** — Paid, Uncollectible, Void, Open, Draft, and more
-4. **Export PDFs** — batch-download official invoice/receipt PDFs (default 5-way concurrency; settings allow 1–10)
-5. **Export usage CSV** — model, cost, tokens, charge status, user ID, team ID, and related fields
-
-Everything is written to a local folder you choose, plus a summary text for success/failure counts. Do not post sensitive billing fields publicly.
-
-### 5. Local session manager (read-only)
-
-<p align="center">
-  <img src="./docs/images/sessions.png" alt="Cursor session manager" width="920">
-</p>
-
-Session Manager reads local Cursor Agent sessions without modifying them:
-
-- Shows main / subagent type, project path, message count, model, updated time, and local size
-- Full-text search across title, project, session ID, and conversation body
-- Optional subagent sessions
-- Multi-select Markdown export, with optional tool-call details
-- Open session folders or the local transcript root directly
-
-It never rewrites Cursor databases, transcript files, or credentials.
-
-### 6. Settings: path, tray, language, updates
-
-<p align="center">
-  <img src="./docs/images/settings.png" alt="Settings page" width="920">
-</p>
-
-Settings covers day-to-day operations:
-
-- **Cursor launch & switching**: auto-detect / manually pick `Cursor.exe`
-- **Window & tray**: close to tray or quit; minimize always goes to tray
-- **Billing export concurrency**: 1–10, default 5
-- **Language**: Simplified Chinese by default, English available
-- **App updates**: startup + manual checks, integrity verification, silent install and relaunch
-
----
-
-## Requirements
-
-- Windows 10 / 11 x64
-- macOS 11+ (Apple Silicon / Universal) or macOS 10.15+ (Intel-only package)
-- [WebView2](https://developer.microsoft.com/microsoft-edge/webview2/)
-- Development: Node.js 20+, Rust stable
-
-## Install & use
-
-1. Download the Windows installer / portable build or a macOS DMG from [Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)
-2. Confirm the Cursor install path in Settings
-3. Add accounts via OAuth / Token / local import
-4. Refresh quotas and switch accounts when needed
-5. Export invoices, receipts, or session Markdown as required
-
-## Development
-
-```powershell
-git clone https://github.com/WarriorLago/CursorAccountCockpit.git
-cd CursorAccountCockpit
-npm install
-npm run typecheck
-npm run tauri:dev
-```
-
-Build the installer:
-
-```powershell
-npm run build
-npx tauri build --bundles nsis
-```
-
-## Data & privacy
-
-- Account index and credentials live in `~/.cursor_account_cockpit`
-- Local import only reads Cursor login-state storage
-- Quota and billing requests go to official Cursor domains
-- Update manifests and installers come from this repository’s GitHub Releases
-- Account tokens are never intended to be committed or uploaded with source archives
-
-## Author & contact
-
-Maintained by **Warrior Ma**. For questions or collaboration, **WeChat is preferred**:
-
-<p align="center">
-  <img src="./docs/images/wechat.png" alt="WeChat contact QR code" width="240">
-</p>
-
-- WeChat: scan the QR code above
-- Email: [warriorlago@163.com](mailto:warriorlago@163.com)
-- [GitHub profile](https://github.com/WarriorLago)
-- [Project repository](https://github.com/WarriorLago/CursorAccountCockpit)
-- [Support notes](./docs/SUPPORT.en.md)
-
-The in-app Author & Support dialog also links to GitHub, Star, and support.
-
-## Open Source & License
-
-Thanks to [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) for the open-source foundation. This project continues from that work; see `NOTICE.md` for details.
-
-Released under **CC BY-NC-SA 4.0**: attribution required, non-commercial use, share-alike. See `LICENSE`.
+Built on [jlcodes99/cockpit-tools](https://github.com/jlcodes99/cockpit-tools) ; see [NOTICE.md](./NOTICE.md). Licensed under [CC BY-NC-SA 4.0](./LICENSE), for non-commercial use.

@@ -1,99 +1,92 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>功能详解 · Cursor Account Cockpit</title>
-  <meta name="description" content="账号管理、账单导出、会话与设置说明。" />
+  <title>功能 · Cursor Account Cockpit</title>
+  <meta name="description" content="账号与额度、用量洞察、团队网关、鹈鹕测试、账单导出和本机会话的详细说明。" />
+  <meta property="og:title" content="功能 · Cursor Account Cockpit" />
+  <meta property="og:description" content="账号与额度、用量洞察、团队网关、鹈鹕测试、账单导出和本机会话的详细说明。" />
+  <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="assets/potato.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260826img2" />
+  <link rel="stylesheet" href="assets/site.css?v=20261104" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topnav">
-      <a class="brand" href="./">
-        <span class="brand-mark"><img src="assets/potato.svg" alt="" width="48" height="48" /></span>
-        <span>
-          <strong>Cursor Account Cockpit</strong>
-          <em>功能详解</em>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="./">首页</a>
-        <a class="active" href="features.html">功能</a>
-        <a href="download.html">下载</a>
-        <a href="./#contact">联系</a>
-        <a href="./#tip">赞赏</a>
-        <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
-        <a class="lang-switch" href="en/features.html">EN</a>
-      </nav>
-    </header>
-
-    <section class="section"><div class="section-head"><h2>Windows 0.2.63 · macOS 2.0.6</h2><p>集中对比全部账号用量，按时间分页查看请求，关注非工作时间活动。团队成员使用独立 API Key，可设置模型范围、到期日、每日和每分钟限额，并在本机查看请求元数据。鹈鹕测试台支持实时进度、盲评、排行与 HTML 结果分享。共享账号的登录会话数量不等于实时使用人数，成员 Key 更适合用量归属。</p></div><p>macOS 的账号与额度管理可直接使用；团队 API 网关与鹈鹕测试需安装 Node.js 20+ 和官方 Cursor Agent CLI。支持从 Finder 识别常用安装目录，也可在设置中指定路径。DMG 使用 ad-hoc 签名，尚未经过 Apple Developer ID 签名和公证。</p></section>
-
-    <section class="hero">
-      <div class="hero-brand">
-        <div class="hero-potato"><img src="assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
-        <div>
-          <h1>功能说明</h1>
-          <p>从账号总览到账单导出、会话与设置</p>
-        </div>
-      </div>
-      <p class="lead">以下配图均来自应用真实界面（演示数据脱敏），便于公开文档展示。</p>
-    </section>
-
-    <section class="section" style="padding-top:8px">
-      <article class="feature">
-        <div>
-          <h3>1. 账号列表</h3>
-          <p>列表视图适合宽屏巡检：邮箱、套餐、用量与操作同一行完整可见。</p>
-        </div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="assets/images/accounts.webp?v=20260826r1" alt="账号列表" /></div>
-      </article>
-      <article class="feature reverse">
-        <div>
-          <h3>2. 账号卡片</h3>
-          <p>卡片视图快速浏览多账号状态，标签、备注与用量明细一目了然。</p>
-        </div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="assets/images/accounts-cards.webp?v=20260826r1" alt="账号卡片" /></div>
-      </article>
-      <article class="feature">
-        <div>
-          <h3>3. 官方账单 / 收据</h3>
-          <p>选账号与起止月份，按状态筛选后批量导出 Stripe 原版 PDF。</p>
-        </div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="assets/images/billing.webp?v=20260826r1" alt="账单导出" /></div>
-      </article>
-      <article class="feature reverse">
-        <div>
-          <h3>4. 会话管理</h3>
-          <p>只读读取本机 Agent 会话，支持搜索、多选与 Markdown 导出。</p>
-        </div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="assets/images/sessions.webp?v=20260826r1" alt="会话管理" /></div>
-      </article>
-      <article class="feature">
-        <div>
-          <h3>5. 设置</h3>
-          <p>Cursor 路径、托盘行为、账单导出并行数、语言，以及自动更新开关。</p>
-        </div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="assets/images/settings.webp?v=20260826r1" alt="设置" /></div>
-      </article>
-      <div class="actions">
-        <a class="btn btn-primary" data-smart-download="primary" data-download-page="download.html" href="download.html">检测设备后下载</a>
-        <a class="btn btn-ghost" href="download.html">更多下载</a>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="row">
-        <span><a href="./">← 返回首页</a></span>
-        <a href="en/features.html">English</a>
-      </div>
-    </footer>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./"><img src="assets/potato.svg" alt="" width="30" height="30" /><span>Cursor Account Cockpit</span></a>
+    <nav aria-label="主导航">
+      <a href="features.html" aria-current="page">功能</a><a href="download.html">下载</a>
+      <a class="nav-extra" href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/CHANGELOG.zh-CN.md">更新日志</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
+      <a class="lang" href="en/features.html" hreflang="en">EN</a>
+    </nav>
   </div>
-  <script src="assets/platform-recommendation.js?v=20260825dnd1" defer></script>
+</header>
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <h1>功能</h1>
+    <p class="lead">每个功能怎么用、边界在哪，都在这里。</p>
+  </div>
+</section>
+<div class="wrap doc">
+  <nav class="doc-toc" aria-label="本页目录"><a href="#accounts">账号与额度</a><a href="#usage">用量洞察</a><a href="#gateway">团队网关</a><a href="#pelican">鹈鹕测试</a><a href="#billing">账单与收据</a><a href="#sessions">本机会话</a><a href="#settings">设置</a></nav>
+  <div class="doc-body"><section class="doc-block" id="accounts">
+  <h2>账号与额度</h2>
+  <p>所有账号在一个地方。列表适合宽屏巡检，卡片适合快速扫一眼。</p>
+  <ul><li>显示套餐、总用量、Auto 和 API 用量、按量付费和重置时间</li><li>OAuth、Token / JSON、读取本机登录三种导入方式</li><li>一键切号：写入登录信息、重启 Cursor，再确认切换生效；授权失效的账号会被拦下</li><li>跨设备备份会自动跳过失效账号</li></ul>
+  <figure class="frame"><img src="assets/images/accounts-cards.webp" alt="账号卡片视图" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/add-account.webp" alt="添加账号" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="usage">
+  <h2>用量洞察</h2>
+  <p>回答三个问题：钱花在哪、什么时候花的、哪个模型最贵。</p>
+  <ul><li>API 额度、Auto 额度、按量付费和其他分开统计，并和官方百分比核对</li><li>每日趋势与用量时刻表联动，点击可定位到当天或某个小时的请求</li><li>工作时间、节假日和调休可配置，能看非工作时间的用量占比</li><li>账号对比、模型排行、耗尽预测，以及导出 CSV</li><li>只保存元数据，不读取对话；后台同步和提醒都默认关闭</li></ul>
+  <figure class="frame"><img src="assets/images/usage.webp" alt="费用构成" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/usage-time.webp" alt="每日趋势和时刻表" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="gateway">
+  <h2>团队网关</h2>
+  <p>把账号池变成 OpenAI / Anthropic / Responses 兼容的 API，给程序或同事使用。默认只监听本机，局域网访问需要手动开启。</p>
+  <ul><li>每人一个 Key：每日和每分钟限额、可用模型、到期日，可随时停用</li><li>按 Key、账号、模型统计请求量和来源 IP；Token 为估算值，真实费用以用量洞察为准</li><li>账号出错自动切换，忙时排队，账号池改动立即生效</li><li>提供试用面板和接入示例，包括 cURL、Python、Node.js、Anthropic SDK 和 Claude Code</li><li>局域网访问走不加密的 HTTP，只适合可信网络</li></ul>
+  <figure class="frame"><img src="assets/images/gateway.webp" alt="网关概览" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/gateway-keys.webp" alt="API Key 管理" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/gateway-logs.webp" alt="请求日志" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="pelican">
+  <h2>鹈鹕测试</h2>
+  <p>同一句提示词发给多个模型，让它们各自生成一个 HTML，在沙箱里并排比较。预览时禁止联网。</p>
+  <ul><li>账号和模型自由搭配，实时显示每一格的进度</li><li>打分、盲评、排行榜，失败项可以就地重试</li><li>存档可复用，可导出成一个 HTML 文件分享</li><li>每个账号用独立的隔离 Worker，不影响正在运行的 API 服务</li></ul>
+  <figure class="frame"><img src="assets/images/pelican.webp" alt="鹈鹕测试结果" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/pelican-board.webp" alt="模型排行榜" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="billing">
+  <h2>账单与收据</h2>
+  <p>按账号、月份和状态筛选，批量下载官方 PDF，完成后生成统计文本，方便核对。</p>
+  <ul><li>按账号隔离，支持跨月和跨年</li><li>并行数可调，默认 5 路</li></ul>
+  <figure class="frame"><img src="assets/images/billing.webp" alt="账单导出" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="sessions">
+  <h2>本机会话</h2>
+  <p>只读浏览这台电脑上的 Cursor Agent 对话，不改动 Cursor 的任何数据。</p>
+  <ul><li>按标题、项目、会话 ID 和正文全文搜索</li><li>多选后导出 Markdown，可选是否包含工具调用</li></ul>
+  <figure class="frame"><img src="assets/images/sessions.webp" alt="会话管理" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="settings">
+  <h2>设置</h2>
+  <p>常规、更新和用量洞察分开管理，不常用的选项默认收起。</p>
+  <ul><li>Cursor 路径自动识别，窗口和托盘行为、语言可调</li><li>工作时间、节假日、后台同步、提醒规则和数据保留</li></ul>
+  <figure class="frame"><img src="assets/images/settings.webp" alt="设置页" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section></div>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>Cursor Account Cockpit</strong>
+      <p>由 Warrior Ma 维护。基于 cockpit-tools 继续开发，按 CC BY-NC-SA 4.0 授权。</p>
+      <p>这不是 Cursor 官方产品，与 Anysphere 没有关联。</p>
+    </div>
+    <div class="footer-links">
+      <a href="features.html">功能</a>
+      <a href="download.html">下载</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">全部版本</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/issues">反馈问题</a>
+      <a href="./#author">联系作者</a>
+    </div>
+  </div>
+</footer>
+  <script src="assets/platform-recommendation.js?v=20261104" defer></script>
+  <script src="assets/site.js?v=20261104" defer></script>
 </body>
 </html>

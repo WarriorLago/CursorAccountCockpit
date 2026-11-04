@@ -3,224 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cursor Account Cockpit · 本机 Cursor 账号驾驶舱</title>
-  <meta name="description" content="本机多账号管理、账单导出、会话浏览与安全设置。Windows / macOS 桌面应用。" />
+  <title>Cursor Account Cockpit · 所有 Cursor 账号，一个窗口看清楚</title>
+  <meta name="description" content="Windows / macOS 桌面工具：管理多个 Cursor 账号的额度和切换，拆清费用去向，给团队发独立 API Key，并排比较模型。账号凭据只留在本机。" />
+  <meta property="og:title" content="Cursor Account Cockpit · 所有 Cursor 账号，一个窗口看清楚" />
+  <meta property="og:description" content="Windows / macOS 桌面工具：管理多个 Cursor 账号的额度和切换，拆清费用去向，给团队发独立 API Key，并排比较模型。账号凭据只留在本机。" />
+  <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="assets/potato.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260826img2" />
+  <link rel="stylesheet" href="assets/site.css?v=20261104" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topnav">
-      <a class="brand" href="./">
-        <span class="brand-mark"><img src="assets/potato.svg" alt="" width="48" height="48" /></span>
-        <span>
-          <strong>Cursor Account Cockpit</strong>
-          <em>by Warrior Ma · 本机账号驾驶舱</em>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a class="active" href="./">首页</a>
-        <a href="features.html">功能</a>
-        <a href="download.html">下载</a>
-        <a href="#contact">联系</a>
-        <a href="#tip">赞赏</a>
-        <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
-        <a class="lang-switch" href="en/">EN</a>
-      </nav>
-    </header>
-
-    <section class="section"><div class="section-head"><h2>Windows 0.2.63 · macOS 2.0.6</h2><p>集中对比全部账号用量，按时间分页查看请求，关注非工作时间活动。团队成员使用独立 API Key，可设置模型范围、到期日、每日和每分钟限额，并在本机查看请求元数据。鹈鹕测试台支持实时进度、盲评、排行与 HTML 结果分享。共享账号的登录会话数量不等于实时使用人数，成员 Key 更适合用量归属。</p></div><p>macOS 的账号与额度管理可直接使用；团队 API 网关与鹈鹕测试需安装 Node.js 20+ 和官方 Cursor Agent CLI。支持从 Finder 识别常用安装目录，也可在设置中指定路径。DMG 使用 ad-hoc 签名，尚未经过 Apple Developer ID 签名和公证。</p></section>
-
-    <section class="hero">
-      <div class="hero-brand">
-        <div class="hero-potato"><img src="assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
-        <div>
-          <h1>Cursor Account Cockpit</h1>
-          <p>本机优先的 Cursor 多账号驾驶舱</p>
-        </div>
-      </div>
-      <p class="lead">
-        在本地集中管理多个 Cursor 账号：查看额度、一键切号、导出官方账单与收据、浏览本机会话。
-        Windows 最新正式版 <strong>0.2.63</strong>，macOS 独立版本 <strong>2.0.6</strong>。
-      </p>
-      <div id="platform-recommendation" aria-live="polite"><span>正在检测当前平台…</span></div>
-      <div class="actions">
-        <a class="btn btn-primary" data-smart-download="primary" data-download-page="download.html" href="download.html">检测设备后下载</a>
-        <a class="btn btn-ghost" href="download.html">Windows / macOS 全部下载</a>
-        <a class="btn btn-deep" href="download.html">全部版本与校验</a>
-      </div>
-      <div class="pill-row">
-        <span class="pill">Windows x64</span>
-        <span class="pill">本机存储凭据</span>
-        <span class="pill">GitHub Releases 更新</span>
-        <span class="pill">CC BY-NC-SA 4.0</span>
-      </div>
-      <div class="hero-shot">
-        <img src="assets/images/accounts.webp?v=20260826r1" alt="账号与额度列表界面" width="1400" height="860" />
-      </div>
-    </section>
-
-    <section class="section" id="highlights">
-      <div class="section-head">
-        <h2>你能用它做什么</h2>
-        <p>面向日常切号与对账；更细的步骤说明见功能页。</p>
-      </div>
-
-      <article class="feature">
-        <div>
-          <h3>多账号与额度 · 列表 / 卡片</h3>
-          <p>列表适合宽屏巡检；卡片适合快速浏览套餐与用量，再一键切换到 Cursor。</p>
-        </div>
-        <div class="feature-media">
-          <img loading="lazy" decoding="async" src="assets/images/accounts.webp?v=20260826r1" alt="账号列表视图" />
-        </div>
-      </article>
-
-      <article class="feature reverse">
-        <div>
-          <h3>卡片布局</h3>
-          <p>三列卡片完整展示标签、备注与用量明细，右侧操作不被裁切。</p>
-        </div>
-        <div class="feature-media">
-          <img loading="lazy" decoding="async" src="assets/images/accounts-cards.webp?v=20260826r1" alt="账号卡片视图" />
-        </div>
-      </article>
-
-      <article class="feature">
-        <div>
-          <h3>官方账单与收据</h3>
-          <p>按账号与月份拉取 Stripe 原版 PDF，支持状态筛选与批量导出。</p>
-        </div>
-        <div class="feature-media">
-          <img loading="lazy" decoding="async" src="assets/images/billing.webp?v=20260826r1" alt="官方账单导出" />
-        </div>
-      </article>
-
-      <article class="feature reverse">
-        <div>
-          <h3>会话管理</h3>
-          <p>只读浏览本机 Cursor Agent 会话，支持搜索与 Markdown 导出。</p>
-        </div>
-        <div class="feature-media">
-          <img loading="lazy" decoding="async" src="assets/images/sessions.webp?v=20260826r1" alt="会话管理" />
-        </div>
-      </article>
-
-      <div class="actions">
-        <a class="btn btn-ghost" href="features.html">功能详解 →</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="panel deep">
-        <h2>直接下载最新版</h2>
-        <p>下列按钮指向 GitHub Releases 真实附件地址，点击即开始下载。</p>
-        <div class="dl-grid">
-          <div class="dl-item">
-            <div>
-              <strong>Windows 安装包</strong>
-              <span>Cursor-Account-Cockpit-0.2.63-x64-setup.exe</span>
-            </div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe">下载</a>
-          </div>
-          <div class="dl-item">
-            <div>
-              <strong>Windows 便携版</strong>
-              <span>Cursor-Account-Cockpit-0.2.63-portable.exe</span>
-            </div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe">下载</a>
-          </div>
-          <div class="dl-item">
-            <div>
-              <strong>macOS 通用版</strong>
-              <span>2.0.6 · Apple 芯片与 Intel 芯片</span>
-            </div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg">下载 DMG</a>
-          </div>
-          <div class="dl-item">
-            <div>
-              <strong>校验与更多文件</strong>
-              <span>SHA-256 与历史版本</span>
-            </div>
-            <a class="btn btn-ghost" href="download.html">打开下载页</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="panel deep contact-band">
-        <div class="band-head">
-          <span class="eyebrow">CONTACT</span>
-          <h2>联系作者</h2>
-          <p>有问题、反馈或合作意向，优先加微信；也可以直接发邮件。</p>
-        </div>
-        <div class="contact-layout">
-          <div class="qr-frame">
-            <img
-              class="qr-wechat"
-              src="assets/images/wechat.png"
-              alt="微信联系二维码"
-              width="241"
-              height="307"
-              style="width:241px!important;height:307px!important;max-width:241px!important;max-height:307px!important;"
-            />
-          </div>
-          <div class="band-body">
-            <h3>微信 · 扫码添加好友</h3>
-            <p>添加后直接私聊即可，适合快速沟通与问题排查。</p>
-            <div class="contact-channels">
-              <a class="channel" href="mailto:warriorlago@163.com">
-                <span class="channel-label">邮箱</span>
-                warriorlago@163.com
-              </a>
-              <a class="channel" href="https://github.com/WarriorLago/CursorAccountCockpit">
-                <span class="channel-label">GitHub</span>
-                WarriorLago/CursorAccountCockpit
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="tip">
-      <div class="panel deep tip-band">
-        <div class="band-head">
-          <span class="eyebrow">TIP</span>
-          <h2>自愿赞赏</h2>
-          <p>若项目对你有帮助，可用支付宝自愿支持后续维护，完全可选。</p>
-        </div>
-        <div class="tip-layout">
-          <div class="qr-frame">
-            <img
-              class="qr-alipay"
-              src="assets/images/alipay.png"
-              alt="支付宝赞赏二维码"
-              width="205"
-              height="307"
-              style="width:205px!important;height:307px!important;max-width:205px!important;max-height:307px!important;"
-            />
-          </div>
-          <div class="band-body">
-            <h3>支付宝</h3>
-            <p>扫码赞赏。金额随意，感谢支持。</p>
-            <p class="tip-note">说明见 <a href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/docs/SUPPORT.md">SUPPORT.md</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="row">
-        <span>© Cursor Account Cockpit · by Warrior Ma</span>
-        <span><a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">下载</a> · <a href="en/">English</a></span>
-      </div>
-    </footer>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./"><img src="assets/potato.svg" alt="" width="30" height="30" /><span>Cursor Account Cockpit</span></a>
+    <nav aria-label="主导航">
+      <a href="features.html">功能</a><a href="download.html">下载</a>
+      <a class="nav-extra" href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/CHANGELOG.zh-CN.md">更新日志</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
+      <a class="lang" href="en/" hreflang="en">EN</a>
+    </nav>
   </div>
-  <script src="assets/platform-recommendation.js?v=20260825dnd1" defer></script>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">Cursor 多账号桌面工具</p>
+    <h1>所有 Cursor 账号，<br />一个窗口看清楚。</h1>
+    <p class="lead">额度、切号、费用去向、团队 Key，都在你自己的电脑上管理。账号凭据只留在本机。</p>
+    <div class="cta">
+      <a class="btn btn-primary" data-smart-download data-download-page="download.html" href="download.html">下载</a>
+      <a class="btn" href="features.html">看看能做什么</a>
+    </div>
+    <p class="meta">Windows 0.2.63 · macOS 2.0.6 · 免费 · 非商业授权</p>
+    <div class="tour" data-tour>
+  <div class="tour-tabs" role="tablist" aria-label="产品界面"><button type="button" role="tab" id="tour-tab-0" aria-controls="tour-panel-0" aria-selected="true" tabindex="0">账号与额度</button><button type="button" role="tab" id="tour-tab-1" aria-controls="tour-panel-1" aria-selected="false" tabindex="-1">用量洞察</button><button type="button" role="tab" id="tour-tab-2" aria-controls="tour-panel-2" aria-selected="false" tabindex="-1">团队网关</button><button type="button" role="tab" id="tour-tab-3" aria-controls="tour-panel-3" aria-selected="false" tabindex="-1">鹈鹕测试</button></div>
+  <figure class="frame tour-frame"><div role="tabpanel" id="tour-panel-0" aria-labelledby="tour-tab-0"><img src="assets/images/accounts.webp" alt="账号列表：套餐、总用量、Auto 和 API 用量、重置时间" width="1800" height="1125" /></div><div role="tabpanel" id="tour-panel-1" aria-labelledby="tour-tab-1" hidden><img src="assets/images/usage.webp" alt="用量洞察：把费用拆成 API 额度、Auto 额度和真实扣费" width="1800" height="1125" loading="lazy" decoding="async" /></div><div role="tabpanel" id="tour-panel-2" aria-labelledby="tour-tab-2" hidden><img src="assets/images/gateway.webp" alt="团队网关：请求量、成功率和每个 Key 的使用情况" width="1800" height="1125" loading="lazy" decoding="async" /></div><div role="tabpanel" id="tour-panel-3" aria-labelledby="tour-tab-3" hidden><img src="assets/images/pelican.webp" alt="鹈鹕测试：多个模型画同一张图，打分对比" width="1800" height="1125" loading="lazy" decoding="async" /></div></figure>
+</div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <span class="kicker">账号与额度</span>
+      <h2>不用挨个登录，也知道哪个账号快用完了</h2>
+      <p>所有账号的套餐、用量和重置时间排在一张表里。需要时一键切换，它会写入登录信息、重启 Cursor，再确认切换真的生效。</p>
+      <ul><li>支持 OAuth、Token 和读取本机登录三种导入方式</li><li>标签、备注、搜索和批量操作</li><li>授权失效的账号会被明确标出，不会把你切过去</li></ul>
+    </div>
+    <figure class="frame"><img src="assets/images/accounts-cards-crop.webp" alt="账号卡片" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+  </div>
+</section>
+
+<section class="feature is-flipped">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <span class="kicker">用量洞察</span>
+      <h2>额度烧得快？先看钱到底花在哪</h2>
+      <p>把费用拆成 API 额度、Auto 额度和真实扣费，并和 Cursor 官方的百分比自动核对。一眼就知道真正进账单的有多少。</p>
+      <ul><li>每日趋势和按真实日期的用量时刻表，点一天就能看当天的请求</li><li>工作时间可配置，可一键获取中国法定节假日和调休</li><li>看哪个模型最贵，预测额度还能用多久</li></ul>
+    </div>
+    <figure class="frame"><img src="assets/images/usage-crop.webp" alt="用量洞察" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <span class="kicker">团队网关</span>
+      <h2>别再发 Token，给每个人发一个 Key</h2>
+      <p>把账号池变成本地 API，兼容 OpenAI、Anthropic 和 Responses 协议。每个 Key 单独计量、单独限额，有人离开时停用他的 Key 就行。</p>
+      <ul><li>每日和每分钟限额、可用模型、到期日</li><li>按 Key、账号、模型统计请求量和来源 IP</li><li>账号出错自动切换，Worker 退出自动重启</li></ul>
+    </div>
+    <figure class="frame"><img src="assets/images/gateway-keys-crop.webp" alt="API Key 管理" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="wrap">
+    <span class="kicker">鹈鹕测试</span>
+    <h2>哪个模型好，让它们画一张就知道</h2>
+    <p class="showcase-lead">同一句提示词发给多个模型，在沙箱里并排渲染，打分进排行榜。盲评模式下打完分才揭晓是谁画的。</p>
+    <div class="drawings"><figure><img src="assets/images/pelican/claude-opus.webp" alt="Claude Opus 5 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Claude Opus 5</figcaption></figure><figure><img src="assets/images/pelican/gpt-sol.webp" alt="GPT-5.6 Sol 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>GPT-5.6 Sol</figcaption></figure><figure><img src="assets/images/pelican/grok.webp" alt="Grok 4.6 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Grok 4.6</figcaption></figure><figure><img src="assets/images/pelican/gemini.webp" alt="Gemini 3.8 Flash 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Gemini 3.8 Flash</figcaption></figure><figure><img src="assets/images/pelican/kimi.webp" alt="Kimi K3 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Kimi K3</figcaption></figure><figure><img src="assets/images/pelican/composer.webp" alt="Composer 2.5 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Composer 2.5</figcaption></figure><figure><img src="assets/images/pelican/fable.webp" alt="Claude Fable 5.1 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Claude Fable 5.1</figcaption></figure><figure><img src="assets/images/pelican/muse.webp" alt="Muse Spark 1.3 画的鹈鹕骑自行车" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Muse Spark 1.3</figcaption></figure></div>
+    <p class="showcase-note">以上都是模型的真实输出：“画一只骑自行车的鹈鹕”。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">还有这些</h2>
+    <div class="cards">
+      <article><h3>官方账单与收据</h3><p>按账号和月份批量导出官方 PDF，月底对账不用一个个登录。</p></article>
+      <article><h3>本机会话浏览</h3><p>只读浏览这台电脑上的 Agent 对话，全文搜索，导出 Markdown。</p></article>
+      <article><h3>用量提醒</h3><p>非工作时间高消耗、当天用量激增时提醒你。默认关闭，阈值可调。</p></article>
+      <article><h3>应用内更新</h3><p>从 GitHub Releases 下载并校验新版本，支持断点续传。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-privacy">
+  <div class="wrap privacy-grid">
+    <div>
+      <h2 class="section-title">你的数据去了哪</h2>
+      <p>账号凭据是最敏感的东西，所以这里写明白了。</p>
+    </div>
+    <table class="privacy"><tbody><tr><th scope="row">账号凭据</th><td>加密保存在本机数据目录，只用来请求 Cursor 官方接口</td></tr><tr><th scope="row">用量记录</th><td>只存时间、模型、Token 和费用，不存对话内容；保留天数可调，可一键清除</td></tr><tr><th scope="row">网关日志</th><td>只记 Key、来源 IP、模型、状态和耗时，不存提示词和回答</td></tr><tr><th scope="row">联网请求</th><td>Cursor 官方接口、Stripe 账单文件、GitHub 更新；节假日数据只在你点击时获取</td></tr><tr><th scope="row">发给作者的数据</th><td>没有。这个项目没有自己的服务器</td></tr></tbody></table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap faq-grid">
+    <h2 class="section-title">常见问题</h2>
+    <div class="faq"><details><summary>这是 Cursor 官方的吗？</summary><p>不是。这是独立的第三方工具，用到的部分接口是 Cursor 网页和客户端自己用的内部接口，Cursor 改动后可能需要跟着更新。</p></details><details><summary>收费吗？</summary><p>工具本身免费，按 CC BY-NC-SA 4.0 授权，限非商业用途。Cursor 的订阅和用量费用由 Cursor 收取。</p></details><details><summary>用量页里的金额是真实花掉的钱吗？</summary><p>大多不是。额度内的金额是 Cursor 按模型单价折算的等值消耗，只有“按量付费”才是真实账单，页面上会分开显示。</p></details><details><summary>能看出一个账号有几个人在用吗？</summary><p>直接共用账号时不能，Cursor 没有提供可靠的数据。如果每人用自己的网关 Key，就能看到每个 Key 的用量和来源 IP。统计结果只描述使用情况，不代表某个人的行为。</p></details><details><summary>多人共用账号有风险吗？</summary><p>可能有。多人共用账号或通过网关转发，可能不符合 Cursor 的使用条款，也可能触发风控，请自行评估。团队长期使用建议考虑 Cursor 的团队方案。</p></details></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-inner">
+    <div>
+      <h2>下载试试</h2>
+      <p>Windows 0.2.63 · macOS 2.0.6</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" data-smart-download data-download-page="download.html" href="download.html">下载</a>
+      <a class="btn btn-on-dark" href="download.html">全部版本</a>
+    </div>
+  </div>
+</section>
+
+<section class="section author" id="author">
+  <div class="wrap author-grid">
+    <div id="contact">
+      <h2 class="section-title">联系作者</h2>
+      <p>有问题或合作意向，优先加微信，也可以发邮件或在 GitHub 提 Issue。</p>
+      <p><a href="mailto:warriorlago@163.com">warriorlago@163.com</a></p>
+      <img class="qr" src="assets/images/wechat.png" alt="微信二维码" width="180" loading="lazy" />
+    </div>
+    <div id="tip">
+      <h2 class="section-title">自愿赞赏</h2>
+      <p>如果它帮到了你，可以用支付宝支持后续维护。完全自愿，不影响任何功能。</p>
+      <p>&nbsp;</p>
+      <img class="qr" src="assets/images/alipay.png" alt="支付宝二维码" width="180" loading="lazy" />
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>Cursor Account Cockpit</strong>
+      <p>由 Warrior Ma 维护。基于 cockpit-tools 继续开发，按 CC BY-NC-SA 4.0 授权。</p>
+      <p>这不是 Cursor 官方产品，与 Anysphere 没有关联。</p>
+    </div>
+    <div class="footer-links">
+      <a href="features.html">功能</a>
+      <a href="download.html">下载</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">全部版本</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/issues">反馈问题</a>
+      <a href="./#author">联系作者</a>
+    </div>
+  </div>
+</footer>
+  <script src="assets/platform-recommendation.js?v=20261104" defer></script>
+  <script src="assets/site.js?v=20261104" defer></script>
 </body>
 </html>

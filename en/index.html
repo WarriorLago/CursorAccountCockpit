@@ -3,173 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cursor Account Cockpit · Local Cursor account cockpit</title>
-  <meta name="description" content="Manage Cursor accounts locally: quotas, switching, billing export, sessions." />
+  <title>Cursor Account Cockpit · Every Cursor account, clear in one window</title>
+  <meta name="description" content="A Windows and macOS desktop tool to manage quota and switching across Cursor accounts, see where cost goes, issue team API keys and compare models. Credentials stay on your machine." />
+  <meta property="og:title" content="Cursor Account Cockpit · Every Cursor account, clear in one window" />
+  <meta property="og:description" content="A Windows and macOS desktop tool to manage quota and switching across Cursor accounts, see where cost goes, issue team API keys and compare models. Credentials stay on your machine." />
+  <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="../assets/potato.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/site.css?v=20260826img2" />
+  <link rel="stylesheet" href="../assets/site.css?v=20261104" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topnav">
-      <a class="brand" href="./">
-        <span class="brand-mark"><img src="../assets/potato.svg" alt="" width="48" height="48" /></span>
-        <span>
-          <strong>Cursor Account Cockpit</strong>
-          <em>by Warrior Ma · local Cursor cockpit</em>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a class="active" href="./">Home</a>
-        <a href="features.html">Features</a>
-        <a href="download.html">Download</a>
-        <a href="#contact">Contact</a>
-        <a href="#tip">Tip</a>
-        <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
-        <a class="lang-switch" href="../">中文</a>
-      </nav>
-    </header>
-
-    <section class="section"><div class="section-head"><h2>Windows 0.2.63 · macOS 2.0.6</h2><p>Compare all accounts, browse paginated chronological requests and inspect after-hours activity. Assign individual API keys with model permissions, expiry, daily and per-minute limits, and inspect request metadata locally. The pelican bench adds live progress, blind review, ratings and HTML galleries. Login sessions do not measure concurrent people; individual keys provide clearer usage attribution.</p></div><p>macOS account and quota management works without extra runtimes. The team API gateway and pelican bench require Node.js 20+ and the official Cursor Agent CLI. Finder launches discover common installation directories; explicit paths can be set in Settings. DMGs are ad-hoc signed, without Apple Developer ID signing or notarization.</p></section>
-
-    <section class="hero">
-      <div class="hero-brand">
-        <div class="hero-potato"><img src="../assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
-        <div>
-          <h1>Cursor Account Cockpit</h1>
-          <p>Local-first multi-account cockpit for Cursor</p>
-        </div>
-      </div>
-      <p class="lead">
-        Manage accounts on your machine: quotas, one-click switching, official invoice/receipt export, and local sessions.
-        Windows <strong>0.2.63</strong> · macOS <strong>2.0.6</strong>.
-      </p>
-      <div id="platform-recommendation" aria-live="polite"><span>Detecting your platform…</span></div>
-      <div class="actions">
-        <a class="btn btn-primary" data-smart-download="primary" data-download-page="download.html" href="download.html">Detect device and download</a>
-        <a class="btn btn-ghost" href="download.html">All Windows / macOS downloads</a>
-        <a class="btn btn-deep" href="download.html">All releases</a>
-      </div>
-      <div class="hero-shot">
-        <img src="../assets/images/accounts.webp?v=20260826r1" alt="Accounts list" width="1400" height="860" />
-      </div>
-    </section>
-
-    <section class="section" id="highlights">
-      <div class="section-head">
-        <h2>What you can do</h2>
-        <p>Screenshots below are from the real app UI with demo data.</p>
-      </div>
-      <article class="feature">
-        <div><h3>Accounts · list</h3><p>Wide list with plan, usage, and actions on one row.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/accounts.webp?v=20260826r1" alt="List view" /></div>
-      </article>
-      <article class="feature reverse">
-        <div><h3>Accounts · cards</h3><p>Card layout for a quick scan of every account.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/accounts-cards.webp?v=20260826r1" alt="Card view" /></div>
-      </article>
-      <article class="feature">
-        <div><h3>Official billing</h3><p>Filter by month and status, then batch-export Stripe PDFs.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/billing.webp?v=20260826r1" alt="Billing" /></div>
-      </article>
-      <article class="feature reverse">
-        <div><h3>Sessions</h3><p>Read-only local Agent sessions with search and Markdown export.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/sessions.webp?v=20260826r1" alt="Sessions" /></div>
-      </article>
-    </section>
-
-    <section class="section">
-      <div class="panel deep">
-        <h2>Direct download</h2>
-        <div class="dl-grid">
-          <div class="dl-item">
-            <div><strong>Windows Setup</strong><span>…-x64-setup.exe</span></div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe">Download</a>
-          </div>
-          <div class="dl-item">
-            <div><strong>Portable</strong><span>…-portable.exe</span></div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe">Download</a>
-          </div>
-          <div class="dl-item">
-            <div><strong>macOS Universal</strong><span>2.0.6 · Apple Silicon and Intel</span></div>
-            <a class="btn btn-primary" href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg">Download DMG</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="panel deep contact-band">
-        <div class="band-head">
-          <span class="eyebrow">CONTACT</span>
-          <h2>Contact the author</h2>
-          <p>For questions, feedback, or collaboration, WeChat is preferred. Email works too.</p>
-        </div>
-        <div class="contact-layout">
-          <div class="qr-frame">
-            <img
-              class="qr-wechat"
-              src="../assets/images/wechat.png"
-              alt="WeChat QR"
-              width="241"
-              height="307"
-              style="width:241px!important;height:307px!important;max-width:241px!important;max-height:307px!important;"
-            />
-          </div>
-          <div class="band-body">
-            <h3>WeChat · scan to add</h3>
-            <p>Add the account and message directly — best for quick troubleshooting.</p>
-            <div class="contact-channels">
-              <a class="channel" href="mailto:warriorlago@163.com">
-                <span class="channel-label">Email</span>
-                warriorlago@163.com
-              </a>
-              <a class="channel" href="https://github.com/WarriorLago/CursorAccountCockpit">
-                <span class="channel-label">GitHub</span>
-                WarriorLago/CursorAccountCockpit
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="tip">
-      <div class="panel deep tip-band">
-        <div class="band-head">
-          <span class="eyebrow">TIP</span>
-          <h2>Optional tip</h2>
-          <p>If the project helped you, Alipay tips are welcome and completely optional.</p>
-        </div>
-        <div class="tip-layout">
-          <div class="qr-frame">
-            <img
-              class="qr-alipay"
-              src="../assets/images/alipay.png"
-              alt="Alipay QR"
-              width="205"
-              height="307"
-              style="width:205px!important;height:307px!important;max-width:205px!important;max-height:307px!important;"
-            />
-          </div>
-          <div class="band-body">
-            <h3>Alipay</h3>
-            <p>Scan to tip. Any amount is appreciated.</p>
-            <p class="tip-note">Details in <a href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/docs/SUPPORT.en.md">SUPPORT.en.md</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="row">
-        <span>© Cursor Account Cockpit · by Warrior Ma</span>
-        <a href="../">中文</a>
-      </div>
-    </footer>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./"><img src="../assets/potato.svg" alt="" width="30" height="30" /><span>Cursor Account Cockpit</span></a>
+    <nav aria-label="Main">
+      <a href="features.html">Features</a><a href="download.html">Download</a>
+      <a class="nav-extra" href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
+      <a class="lang" href="../" hreflang="zh-CN">中文</a>
+    </nav>
   </div>
-  <script src="../assets/platform-recommendation.js?v=20260825dnd1" defer></script>
+</header>
+<main>
+<section class="hero">
+  <div class="wrap">
+    <p class="kicker">A desktop cockpit for Cursor accounts</p>
+    <h1>Every Cursor account,<br />clear in one window.</h1>
+    <p class="lead">Quota, switching, where the money goes and team keys, all managed on your own computer. Credentials stay on your machine.</p>
+    <div class="cta">
+      <a class="btn btn-primary" data-smart-download data-download-page="download.html" href="download.html">Download</a>
+      <a class="btn" href="features.html">See what it does</a>
+    </div>
+    <p class="meta">Windows 0.2.63 · macOS 2.0.6 · Free · Non-commercial license</p>
+    <div class="tour" data-tour>
+  <div class="tour-tabs" role="tablist" aria-label="Product views"><button type="button" role="tab" id="tour-tab-0" aria-controls="tour-panel-0" aria-selected="true" tabindex="0">Accounts</button><button type="button" role="tab" id="tour-tab-1" aria-controls="tour-panel-1" aria-selected="false" tabindex="-1">Usage</button><button type="button" role="tab" id="tour-tab-2" aria-controls="tour-panel-2" aria-selected="false" tabindex="-1">Team gateway</button><button type="button" role="tab" id="tour-tab-3" aria-controls="tour-panel-3" aria-selected="false" tabindex="-1">Pelican bench</button></div>
+  <figure class="frame tour-frame"><div role="tabpanel" id="tour-panel-0" aria-labelledby="tour-tab-0"><img src="../assets/images/accounts.webp" alt="Account list with plan, usage and reset time" width="1800" height="1125" /></div><div role="tabpanel" id="tour-panel-1" aria-labelledby="tour-tab-1" hidden><img src="../assets/images/usage.webp" alt="Usage insights splitting cost into API quota, Auto quota and real charges" width="1800" height="1125" loading="lazy" decoding="async" /></div><div role="tabpanel" id="tour-panel-2" aria-labelledby="tour-tab-2" hidden><img src="../assets/images/gateway.webp" alt="Team gateway with requests, success rate and per-key usage" width="1800" height="1125" loading="lazy" decoding="async" /></div><div role="tabpanel" id="tour-panel-3" aria-labelledby="tour-tab-3" hidden><img src="../assets/images/pelican.webp" alt="Pelican bench comparing the same drawing across models" width="1800" height="1125" loading="lazy" decoding="async" /></div></figure>
+</div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <span class="kicker">Accounts and quota</span>
+      <h2>Know which account is running out without logging in to each</h2>
+      <p>Every account's plan, usage and reset time in one table. Switching writes the login, restarts Cursor and then confirms the switch actually took effect.</p>
+      <ul><li>Import through OAuth, a token or the local Cursor login</li><li>Tags, notes, search and bulk actions</li><li>Accounts with expired authorization are flagged and never switched to</li></ul>
+    </div>
+    <figure class="frame"><img src="../assets/images/accounts-cards-crop.webp" alt="Account cards" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+  </div>
+</section>
+
+<section class="feature is-flipped">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <span class="kicker">Usage insights</span>
+      <h2>Quota going fast? See where it actually went</h2>
+      <p>Cost is split into API quota, Auto quota and real charges, then checked against Cursor's own percentages, so you can see at a glance what actually reaches your bill.</p>
+      <ul><li>Daily trend and a time map by real date. Click a day to see its requests</li><li>Configurable working hours, with China public holidays and make-up days one click away</li><li>See which models cost most and how long the quota should last</li></ul>
+    </div>
+    <figure class="frame"><img src="../assets/images/usage-crop.webp" alt="Usage insights" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="wrap feature-grid">
+    <div class="feature-copy">
+      <span class="kicker">Team gateway</span>
+      <h2>Stop handing out tokens. Give everyone a key</h2>
+      <p>Turn the account pool into a local API compatible with OpenAI, Anthropic and Responses. Each key is metered and limited on its own, and when someone leaves you simply disable theirs.</p>
+      <ul><li>Daily and per-minute limits, allowed models and expiry dates</li><li>Requests and source IPs by key, account and model</li><li>Automatic failover between accounts and restarts for exited workers</li></ul>
+    </div>
+    <figure class="frame"><img src="../assets/images/gateway-keys-crop.webp" alt="API key management" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="wrap">
+    <span class="kicker">Pelican bench</span>
+    <h2>Which model is better? Ask them all to draw</h2>
+    <p class="showcase-lead">One prompt goes to many models, the results render side by side in a sandbox, and your scores feed a leaderboard. Blind mode reveals the model only after you score it.</p>
+    <div class="drawings"><figure><img src="../assets/images/pelican/claude-opus.webp" alt="A pelican on a bicycle drawn by Claude Opus 5" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Claude Opus 5</figcaption></figure><figure><img src="../assets/images/pelican/gpt-sol.webp" alt="A pelican on a bicycle drawn by GPT-5.6 Sol" width="800" height="600" loading="lazy" decoding="async" /><figcaption>GPT-5.6 Sol</figcaption></figure><figure><img src="../assets/images/pelican/grok.webp" alt="A pelican on a bicycle drawn by Grok 4.6" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Grok 4.6</figcaption></figure><figure><img src="../assets/images/pelican/gemini.webp" alt="A pelican on a bicycle drawn by Gemini 3.8 Flash" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Gemini 3.8 Flash</figcaption></figure><figure><img src="../assets/images/pelican/kimi.webp" alt="A pelican on a bicycle drawn by Kimi K3" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Kimi K3</figcaption></figure><figure><img src="../assets/images/pelican/composer.webp" alt="A pelican on a bicycle drawn by Composer 2.5" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Composer 2.5</figcaption></figure><figure><img src="../assets/images/pelican/fable.webp" alt="A pelican on a bicycle drawn by Claude Fable 5.1" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Claude Fable 5.1</figcaption></figure><figure><img src="../assets/images/pelican/muse.webp" alt="A pelican on a bicycle drawn by Muse Spark 1.3" width="800" height="600" loading="lazy" decoding="async" /><figcaption>Muse Spark 1.3</figcaption></figure></div>
+    <p class="showcase-note">All of these are real model output for “draw a pelican riding a bicycle”.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">And also</h2>
+    <div class="cards">
+      <article><h3>Official invoices and receipts</h3><p>Export official PDFs in bulk by account and month, without logging in to each one.</p></article>
+      <article><h3>Local session browser</h3><p>Browse Agent conversations on this computer read-only, search them and export to Markdown.</p></article>
+      <article><h3>Usage notices</h3><p>Get notified about heavy off-hours use or sudden daily spikes. Off by default, with adjustable thresholds.</p></article>
+      <article><h3>In-app updates</h3><p>New versions download from GitHub Releases, verified and resumable.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-privacy">
+  <div class="wrap privacy-grid">
+    <div>
+      <h2 class="section-title">Where your data goes</h2>
+      <p>Account credentials are the most sensitive thing here, so it is spelled out.</p>
+    </div>
+    <table class="privacy"><tbody><tr><th scope="row">Account credentials</th><td>Encrypted in the local data folder and only used to call Cursor's own services</td></tr><tr><th scope="row">Usage records</th><td>Only time, model, tokens and cost, never conversations. Retention is configurable and you can clear it at any time</td></tr><tr><th scope="row">Gateway logs</th><td>Only key, source IP, model, status and latency, never prompts or answers</td></tr><tr><th scope="row">Network requests</th><td>Cursor's services, Stripe invoice files and GitHub updates. Holiday data is fetched only when you ask</td></tr><tr><th scope="row">Data sent to the author</th><td>None. This project has no servers of its own</td></tr></tbody></table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap faq-grid">
+    <h2 class="section-title">Questions</h2>
+    <div class="faq"><details><summary>Is this an official Cursor product?</summary><p>No. It is an independent tool, and some of the endpoints it uses are internal ones that Cursor's own web and desktop apps rely on, so a change at Cursor can require an update here.</p></details><details><summary>Does it cost anything?</summary><p>The tool is free under CC BY-NC-SA 4.0, for non-commercial use. Cursor's subscription and usage are billed by Cursor.</p></details><details><summary>Are the amounts on the usage page real spending?</summary><p>Mostly not. Amounts within quota are the equivalent value Cursor deducts from your allowance. Only on-demand usage is a real charge, and the page shows it separately.</p></details><details><summary>Can it tell how many people use an account?</summary><p>Not when a login is shared directly, because Cursor offers no reliable data for that. If everyone uses their own gateway key, you can see usage and source IPs per key. These figures describe usage, not any person's conduct.</p></details><details><summary>Is it risky to share an account?</summary><p>It can be. Sharing an account or routing through a gateway may not comply with Cursor's terms and can trigger risk controls, so please judge this for yourself. Teams using it long term should consider Cursor's team plans.</p></details></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-inner">
+    <div>
+      <h2>Give it a try</h2>
+      <p>Windows 0.2.63 · macOS 2.0.6</p>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" data-smart-download data-download-page="download.html" href="download.html">Download</a>
+      <a class="btn btn-on-dark" href="download.html">All versions</a>
+    </div>
+  </div>
+</section>
+
+<section class="section author" id="author">
+  <div class="wrap author-grid">
+    <div id="contact">
+      <h2 class="section-title">Contact the author</h2>
+      <p>For questions or collaboration, WeChat is quickest. Email and GitHub issues work too.</p>
+      <p><a href="mailto:warriorlago@163.com">warriorlago@163.com</a></p>
+      <img class="qr" src="../assets/images/wechat.png" alt="WeChat QR code" width="180" loading="lazy" />
+    </div>
+    <div id="tip">
+      <h2 class="section-title">Support the project</h2>
+      <p>If it helped you, you can support its upkeep through Alipay. Entirely optional, and no features depend on it.</p>
+      <p>&nbsp;</p>
+      <img class="qr" src="../assets/images/alipay.png" alt="Alipay QR code" width="180" loading="lazy" />
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>Cursor Account Cockpit</strong>
+      <p>Maintained by Warrior Ma. Built on cockpit-tools and licensed under CC BY-NC-SA 4.0.</p>
+      <p>Not an official Cursor product and not affiliated with Anysphere.</p>
+    </div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="download.html">Download</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">All releases</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/issues">Report an issue</a>
+      <a href="./#author">Contact</a>
+    </div>
+  </div>
+</footer>
+  <script src="../assets/platform-recommendation.js?v=20261104" defer></script>
+  <script src="../assets/site.js?v=20261104" defer></script>
 </body>
 </html>

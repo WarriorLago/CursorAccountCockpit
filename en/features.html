@@ -1,82 +1,92 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Features · Cursor Account Cockpit</title>
+  <meta name="description" content="Details on accounts and quota, usage insights, the team gateway, the pelican bench, invoice export and local sessions." />
+  <meta property="og:title" content="Features · Cursor Account Cockpit" />
+  <meta property="og:description" content="Details on accounts and quota, usage insights, the team gateway, the pelican bench, invoice export and local sessions." />
+  <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="../assets/potato.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/site.css?v=20260826img2" />
+  <link rel="stylesheet" href="../assets/site.css?v=20261104" />
 </head>
 <body>
-  <div class="shell">
-    <header class="topnav">
-      <a class="brand" href="./">
-        <span class="brand-mark"><img src="../assets/potato.svg" alt="" width="48" height="48" /></span>
-        <span>
-          <strong>Cursor Account Cockpit</strong>
-          <em>Features</em>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="./">Home</a>
-        <a class="active" href="features.html">Features</a>
-        <a href="download.html">Download</a>
-        <a href="./#contact">Contact</a>
-        <a href="./#tip">Tip</a>
-        <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
-        <a class="lang-switch" href="../features.html">中文</a>
-      </nav>
-    </header>
-
-    <section class="section"><div class="section-head"><h2>Windows 0.2.63 · macOS 2.0.6</h2><p>Compare all accounts, browse paginated chronological requests and inspect after-hours activity. Assign individual API keys with model permissions, expiry, daily and per-minute limits, and inspect request metadata locally. The pelican bench adds live progress, blind review, ratings and HTML galleries. Login sessions do not measure concurrent people; individual keys provide clearer usage attribution.</p></div><p>macOS account and quota management works without extra runtimes. The team API gateway and pelican bench require Node.js 20+ and the official Cursor Agent CLI. Finder launches discover common installation directories; explicit paths can be set in Settings. DMGs are ad-hoc signed, without Apple Developer ID signing or notarization.</p></section>
-
-    <section class="hero">
-      <div class="hero-brand">
-        <div class="hero-potato"><img src="../assets/potato.svg" alt="Cursor Account Cockpit" width="88" height="88" /></div>
-        <div>
-          <h1>Features</h1>
-          <p>Accounts, billing, sessions, settings</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:8px">
-      <article class="feature">
-        <div><h3>1. Account list</h3><p>Full-width rows for email, plan, usage, and actions.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/accounts.webp?v=20260826r1" alt="List" /></div>
-      </article>
-      <article class="feature reverse">
-        <div><h3>2. Account cards</h3><p>Card layout for a quick multi-account scan.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/accounts-cards.webp?v=20260826r1" alt="Cards" /></div>
-      </article>
-      <article class="feature">
-        <div><h3>3. Official billing</h3><p>Month range, status filters, batch Stripe PDF export.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/billing.webp?v=20260826r1" alt="Billing" /></div>
-      </article>
-      <article class="feature reverse">
-        <div><h3>4. Sessions</h3><p>Read-only local Agent sessions with search and export.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/sessions.webp?v=20260826r1" alt="Sessions" /></div>
-      </article>
-      <article class="feature">
-        <div><h3>5. Settings</h3><p>Cursor path, tray, export concurrency, language, and auto-update toggle.</p></div>
-        <div class="feature-media"><img loading="lazy" decoding="async" src="../assets/images/settings.webp?v=20260826r1" alt="Settings" /></div>
-      </article>
-      <div class="actions">
-        <a class="btn btn-primary" data-smart-download="primary" data-download-page="download.html" href="download.html">Detect device and download</a>
-        <a class="btn btn-ghost" href="download.html">All downloads</a>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="row">
-        <span><a href="./">← Home</a></span>
-        <a href="../features.html">中文</a>
-      </div>
-    </footer>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="./"><img src="../assets/potato.svg" alt="" width="30" height="30" /><span>Cursor Account Cockpit</span></a>
+    <nav aria-label="Main">
+      <a href="features.html" aria-current="page">Features</a><a href="download.html">Download</a>
+      <a class="nav-extra" href="https://github.com/WarriorLago/CursorAccountCockpit/blob/main/CHANGELOG.md">Changelog</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit">GitHub</a>
+      <a class="lang" href="../features.html" hreflang="zh-CN">中文</a>
+    </nav>
   </div>
-  <script src="../assets/platform-recommendation.js?v=20260825dnd1" defer></script>
+</header>
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <h1>Features</h1>
+    <p class="lead">How each feature works and where its limits are.</p>
+  </div>
+</section>
+<div class="wrap doc">
+  <nav class="doc-toc" aria-label="On this page"><a href="#accounts">Accounts</a><a href="#usage">Usage</a><a href="#gateway">Team gateway</a><a href="#pelican">Pelican bench</a><a href="#billing">Invoices</a><a href="#sessions">Sessions</a><a href="#settings">Settings</a></nav>
+  <div class="doc-body"><section class="doc-block" id="accounts">
+  <h2>Accounts and quota</h2>
+  <p>All accounts in one place. The list suits wide-screen checks and the cards suit a quick glance.</p>
+  <ul><li>Plan, total, Auto, API and on-demand usage, and reset time</li><li>Import through OAuth, a token or JSON, or the local Cursor login</li><li>One-click switching writes the login, restarts Cursor and confirms the result. Expired accounts are stopped before switching</li><li>Cross-device backup skips expired accounts automatically</li></ul>
+  <figure class="frame"><img src="../assets/images/accounts-cards.webp" alt="Account cards" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/add-account.webp" alt="Adding an account" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="usage">
+  <h2>Usage insights</h2>
+  <p>It answers three questions: where the money went, when, and which models cost the most.</p>
+  <ul><li>API quota, Auto quota, on-demand and other are counted separately and checked against official percentages</li><li>The daily trend and time map are linked, and a click focuses the requests of a day or an hour</li><li>Configurable working hours, holidays and make-up days, with an off-hours share</li><li>Account comparison, model ranking, exhaustion forecast and CSV export</li><li>Stores metadata only and never reads conversations. Background sync and notices are off by default</li></ul>
+  <figure class="frame"><img src="../assets/images/usage.webp" alt="Cost breakdown" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/usage-time.webp" alt="Daily trend and time map" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="gateway">
+  <h2>Team gateway</h2>
+  <p>Turn the account pool into an OpenAI, Anthropic and Responses compatible API for programs or colleagues. It listens on this computer by default, and LAN access has to be turned on.</p>
+  <ul><li>A key per person with daily and per-minute limits, allowed models and expiry, and can be disabled at any time</li><li>Requests and source IPs by key, account and model. Tokens are estimates, so use Usage insights for real cost</li><li>Automatic failover, queueing when busy, and pool changes that apply immediately</li><li>A playground and snippets for cURL, Python, Node.js, the Anthropic SDK and Claude Code</li><li>LAN access uses unencrypted HTTP and is only suitable for trusted networks</li></ul>
+  <figure class="frame"><img src="../assets/images/gateway.webp" alt="Gateway overview" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/gateway-keys.webp" alt="API key management" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/gateway-logs.webp" alt="Request logs" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="pelican">
+  <h2>Pelican bench</h2>
+  <p>One prompt goes to many models, each returns an HTML file, and they are compared side by side in a sandbox with network access blocked.</p>
+  <ul><li>Mix accounts and models freely, with live progress for each cell</li><li>Ratings, blind review, a leaderboard and in-place retries</li><li>Reusable archives and single-file HTML export for sharing</li><li>Each account uses an isolated worker, so a running API service is unaffected</li></ul>
+  <figure class="frame"><img src="../assets/images/pelican.webp" alt="Pelican results" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/pelican-board.webp" alt="Model leaderboard" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="billing">
+  <h2>Invoices and receipts</h2>
+  <p>Filter by account, month and status, download official PDFs in bulk, and get a summary for reconciling.</p>
+  <ul><li>Separated by account, across months and years</li><li>Adjustable concurrency, 5 by default</li></ul>
+  <figure class="frame"><img src="../assets/images/billing.webp" alt="Invoice export" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="sessions">
+  <h2>Local sessions</h2>
+  <p>Browse Cursor Agent conversations on this computer read-only, without changing any Cursor data.</p>
+  <ul><li>Full-text search by title, project, session ID and content</li><li>Export a selection to Markdown, with or without tool calls</li></ul>
+  <figure class="frame"><img src="../assets/images/sessions.webp" alt="Session manager" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section><section class="doc-block" id="settings">
+  <h2>Settings</h2>
+  <p>General, updates and usage insights are managed separately, and rarely used options stay out of the way.</p>
+  <ul><li>Automatic Cursor path detection, plus window, tray and language options</li><li>Working hours, holidays, background sync, notice rules and data retention</li></ul>
+  <figure class="frame"><img src="../assets/images/settings.webp" alt="Settings" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
+</section></div>
+</div>
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <strong>Cursor Account Cockpit</strong>
+      <p>Maintained by Warrior Ma. Built on cockpit-tools and licensed under CC BY-NC-SA 4.0.</p>
+      <p>Not an official Cursor product and not affiliated with Anysphere.</p>
+    </div>
+    <div class="footer-links">
+      <a href="features.html">Features</a>
+      <a href="download.html">Download</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">All releases</a>
+      <a href="https://github.com/WarriorLago/CursorAccountCockpit/issues">Report an issue</a>
+      <a href="./#author">Contact</a>
+    </div>
+  </div>
+</footer>
+  <script src="../assets/platform-recommendation.js?v=20261104" defer></script>
+  <script src="../assets/site.js?v=20261104" defer></script>
 </body>
 </html>
