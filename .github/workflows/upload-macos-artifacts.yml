@@ -38,4 +38,11 @@ jobs:
             test -s "dist/Cursor-Account-Cockpit-$VERSION-macos-$arch.dmg"
           done
           sha256sum dist/*.dmg
-          gh release upload "v$VERSION" dist/*.dmg
+          for arch in arm64 x64 universal; do
+            file="Cursor-Account-Cockpit-$VERSION-macos-$arch.dmg"
+            if gh release view "v$VERSION" --json assets --jq '.assets[].name' | grep -Fxq "$file"; then
+              echo "Already uploaded: $file"
+            else
+              gh release upload "v$VERSION" "dist/$file"
+            fi
+          done
