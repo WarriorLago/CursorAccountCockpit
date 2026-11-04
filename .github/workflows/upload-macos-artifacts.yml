@@ -1,0 +1,41 @@
+name: Upload verified macOS artifacts
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Successful macOS DMG Release run ID
+        required: true
+      version:
+        description: Existing draft release version
+        required: true
+permissions:
+  contents: write
+  actions: read
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RUN_ID: ${{ inputs.run_id }}
+      VERSION: ${{ inputs.version }}
+    steps:
+      - name: Validate completed build and draft release
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RUN_ID" =~ ^[0-9]+$ ]]
+          [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          gh run view "$RUN_ID" --json conclusion,workflowName | jq -e '.conclusion == "success" and .workflowName == "macOS DMG Release"'
+          gh release view "v$VERSION" --json isDraft | jq -e '.isDraft == true'
+      - name: Download checked artifacts and upload to draft
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          for arch in arm64 x64 universal; do
+            gh run download "$RUN_ID" --name "macos-$arch" --dir dist
+            test -s "dist/Cursor-Account-Cockpit-$VERSION-macos-$arch.dmg"
+          done
+          sha256sum dist/*.dmg
+          gh release upload "v$VERSION" dist/*.dmg
