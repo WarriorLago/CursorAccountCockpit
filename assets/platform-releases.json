@@ -1,19 +1,19 @@
 {
   "windows": {
     "label": "Windows",
-    "version": "0.2.57",
+    "version": "0.2.63",
     "system": "Windows 10/11 x64",
-    "setup": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/Cursor-Account-Cockpit-0.2.57-x64-setup.exe",
-    "portable": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/Cursor-Account-Cockpit-0.2.57-portable.exe",
-    "manifest": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/latest.json"
+    "setup": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe",
+    "portable": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe",
+    "manifest": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/latest.json"
   },
   "macos": {
     "label": "macOS",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "system": "Apple Silicon: macOS 11+ · Intel: macOS 10.15+",
-    "universal": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg",
-    "arm64": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg",
-    "x64": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg",
-    "manifest": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/macos-latest.json"
+    "universal": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg",
+    "arm64": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg",
+    "x64": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg",
+    "manifest": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/macos-latest.json"
   }
 }

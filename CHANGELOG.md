@@ -1,5 +1,66 @@
 # Changelog
 
+## macOS [2.0.6] - 2026-11-04
+
+Includes the usage insights, team API gateway, pelican bench and settings improvements in Windows 0.2.63. Keeps native window controls and fixes bundle resources and CLI discovery when launched from Finder. The API gateway and pelican bench require Node.js 20+ and the official Cursor Agent CLI; account and quota management do not. Apple Silicon, Intel and Universal DMGs use the independent macOS OTA channel.
+
+## Windows [0.2.63] - 2026-11-04
+
+### Added
+
+- The API service is now a team gateway: named keys with daily and per-minute limits, allowed models and expiry that can be disabled independently, plus request and source-IP statistics by key, account and model.
+- Request logs persist in a local database with filtering, search and failure reasons, storing metadata only. Added model aliases and optional LAN access.
+- Account pool changes apply immediately and exited workers restart automatically. Requests fail over on 429, 5xx and connection errors, can queue for a free worker, and support three routing strategies.
+- Added a playground that reads streamed text and shows time to first byte, and generated connection snippets including Claude Code.
+- The pelican bench gains a live progress grid, ratings, blind review, a leaderboard, preview navigation and source view, in-place retries, config reuse, prompt templates, time estimates and a single-file gallery export.
+- Usage insights split cost by billing type: API quota, Auto quota, on-demand (actually billed) and other, reconciled automatically with official quota percentages.
+- Settings can fetch China public holidays and make-up working days (from the open-source holiday-cn dataset); manual editing remains available.
+- Usage insights gain a This week range; clicking a day in the trend focuses the time map and request list.
+
+### Changed
+
+- Redesigned Settings with General, Updates and Usage insights tabs; usage settings are reduced to working hours, background sync, usage notices and local data.
+- Rearranged the usage page with uniform control sizes; the time map shows real dates for ranges up to 14 days.
+
+### Fixed
+
+- Fixed the start-with-app switch having no effect, Claude Code requests with `?beta=true` returning 404, no way to recover from the UI after every worker exited, and a concurrency slot being released twice when a 429 switched accounts.
+- The default request timeout for new configurations is now 300 seconds instead of 45, so long answers are not cut off; saved settings are unchanged.
+- Pelican account concurrency now starts the next account as soon as a slot frees up instead of waiting for a whole batch, and latency includes reading the answer.
+- Cost now uses `chargedCents`, matching official totals; the exhaustion forecast no longer stays on insufficient data for accounts with bonus usage.
+- Fixed the blank account picker on custom ranges, the wrapped toolbar on single accounts, and the trend chart's focus outline and dead clicks.
+
+Published together with macOS 2.0.6.
+
+## Windows [0.2.62] - 2026-11-04
+
+- Restore the original potato application icon in the custom Windows title bar, preserving its colors when inactive. Local acceptance build; no OTA publication.
+
+## Windows [0.2.61] - 2026-11-04
+
+- Disable WebView context menus, add a compact Windows title bar with native window actions, and refine scrollbars for light and dark themes. Local acceptance build; no OTA publication.
+
+## Windows [0.2.60] - 2026-11-03
+
+- Align the usage page with the shared tab header: title, description, version and author support; move sync controls into the filter toolbar. Local acceptance build only; no OTA publication.
+
+## Windows [0.2.59] - 2026-11-03
+
+- Unify usage selectors with compact themed menus, keyboard navigation, selected checkmarks and viewport-aware positioning.
+- Redesign usage insights around all-account comparison, remaining quota, request activity and account drill-down.
+- Add chronological request history, selectable sorting, 20/50/100-row pagination and page jumping; introduce a labelled trend curve.
+- Cancel an account's usage sync before deleting the account and associated history, without blocking unrelated accounts.
+- Clarify conversation sessions versus login sessions and people. Local acceptance build; no OTA publication.
+
+## Windows [0.2.58] - 2026-11-03
+
+### Added
+
+- Local usage history, a 7×24 heatmap, daily trends, model cost breakdown, Top 20 requests and CSV export.
+- Configurable working hours, non-working dates and extra working dates, plus complete-week comparisons.
+- Opt-in background synchronization and three configurable usage rules with durable deduplication and limited notifications.
+- Quota and on-demand forecasts require complete history and reconciled billing data. Unknown Max mode and missing costs remain explicit.
+
 ## Windows [0.2.57] - 2026-10-20
 
 ### Fixed

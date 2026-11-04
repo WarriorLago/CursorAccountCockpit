@@ -20,9 +20,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 Windows 0.2.57</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/latest"><strong>下载 Windows 0.2.63</strong></a>
   ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.5"><strong>macOS 2.0.5</strong></a>
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/tag/v2.0.6"><strong>macOS 2.0.6</strong></a>
   ·
   <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases">全部版本</a>
   ·
@@ -51,22 +51,28 @@ Cursor Account Cockpit 是一个 **Windows / macOS 本地桌面应用**，专门
 
 账号凭据保存在本机目录，不上传到本项目仓库。额度与账单请求直接发往 Cursor 官方域名。
 
-## 最新版本：Windows 0.2.57 · macOS 2.0.5
+## 最新版本：Windows 0.2.63 · macOS 2.0.6
 
 请只从本仓库官方 Release 下载（下列为直链）：
 
 | 文件 | 说明 |
 | --- | --- |
-| [Cursor-Account-Cockpit-0.2.57-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/Cursor-Account-Cockpit-0.2.57-x64-setup.exe) | Windows x64 安装包 |
-| [Cursor-Account-Cockpit-0.2.57-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/Cursor-Account-Cockpit-0.2.57-portable.exe) | Windows x64 便携版 |
-| [Cursor-Account-Cockpit-0.2.57-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/Cursor-Account-Cockpit-0.2.57-SHA256SUMS.txt) | Windows SHA-256 校验 |
-| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.57/latest.json) | Windows 应用内更新清单 |
-| [Cursor-Account-Cockpit-2.0.5-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-universal.dmg) | macOS 通用 DMG（推荐） |
-| [Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-arm64.dmg) | macOS Apple 芯片 |
-| [Cursor-Account-Cockpit-2.0.5-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/Cursor-Account-Cockpit-2.0.5-macos-x64.dmg) | macOS Intel |
-| [macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.5/macos-latest.json) | macOS 应用内更新清单 |
+| [Cursor-Account-Cockpit-0.2.63-x64-setup.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe) | Windows x64 安装包 |
+| [Cursor-Account-Cockpit-0.2.63-portable.exe](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe) | Windows x64 便携版 |
+| [Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-SHA256SUMS.txt) | Windows SHA-256 校验 |
+| [latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/latest.json) | Windows 应用内更新清单 |
+| [Cursor-Account-Cockpit-2.0.6-macos-universal.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg) | macOS 通用 DMG（推荐） |
+| [Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg) | macOS Apple 芯片 |
+| [Cursor-Account-Cockpit-2.0.6-macos-x64.dmg](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg) | macOS Intel |
+| [macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/macos-latest.json) | macOS 应用内更新清单 |
 
 更多版本见 [项目下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html) 或 [GitHub Releases](https://github.com/WarriorLago/CursorAccountCockpit/releases)。部分旧版本仅有源码 ZIP。
+
+## 本次更新
+
+集中对比全部账号用量，按时间分页查看请求，关注非工作时间活动。团队成员使用独立 API Key，可设置模型范围、到期日、每日和每分钟限额，并在本机查看请求元数据。鹈鹕测试台支持实时进度、盲评、排行与 HTML 结果分享。共享账号的登录会话数量不等于实时使用人数，成员 Key 更适合用量归属。
+
+macOS 的账号与额度管理可直接使用；团队 API 网关与鹈鹕测试需安装 Node.js 20+ 和官方 Cursor Agent CLI。支持从 Finder 识别常用安装目录，也可在设置中指定路径。DMG 使用 ad-hoc 签名，尚未经过 Apple Developer ID 签名和公证。
 
 ---
 
