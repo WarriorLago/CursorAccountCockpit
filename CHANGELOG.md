@@ -1,5 +1,18 @@
 # Changelog
 
+## Windows [0.2.68] / macOS [2.0.8] - 2026-11-11
+
+- Publish the automatic account refresh and usage authentication fixes on Windows and all three macOS architectures.
+- Sync refreshes the account automatically, renews rejected sessions once, and hides stale errors while the operation runs.
+- Update bilingual project pages, downloads and independent OTA channels.
+
+## Windows [0.2.67] - 2026-11-11
+
+- Automatically refresh accounts when syncing and renew the session once if the usage endpoint rejects authentication; suppress previous errors while syncing.
+- Separate usage-sync authentication failures from account reauthorization; HTTP 403 uses bounded backoff instead of permanently blocking sync.
+- Retry usage sync after a newer successful quota refresh, keeping the previous error until usage succeeds.
+- Refresh usage insights when account data changes and reject outdated overlapping responses.
+
 ## Windows [0.2.66] / macOS [2.0.7] - 2026-11-11
 
 - Keep consecutive API conversation turns on the same account and reuse idle sessions; improve tool calls and Responses continuation.

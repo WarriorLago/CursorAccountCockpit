@@ -1,23 +1,23 @@
 {
-  "version": "2.0.7",
-  "publishedAt": "2026-11-11T06:48:21.010594Z",
-  "notes": "Conversation reuse, API tools and proxy settings, account-pool and API key fixes, and Pelican result management.",
-  "notesZh": "连续对话复用、API 工具权限与代理、账号池与 Key 修复、鹈鹕结果管理。",
+  "version": "2.0.8",
+  "publishedAt": "2026-11-11T11:18:18.793334Z",
+  "notes": "Automatic account refresh during usage sync, session renewal and corrected authorization status.",
+  "notesZh": "同步时自动刷新账号、续期重试，修复用量授权误报。",
   "platforms": {
     "macos-universal-dmg": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg",
-      "size": 80582700,
-      "sha256": "847d938398a5f5ce33d5648069228996f10bafc5519917c34d75199966c892db"
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-universal.dmg",
+      "size": 80576372,
+      "sha256": "b7f3e1e8de35fc11f2e3e12fa16683aef950699f725a49fd09717bfa876e5a1d"
     },
     "darwin-aarch64-app": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg",
-      "size": 51523751,
-      "sha256": "bebddfd8c024abbc972f97a612c3319beb8915151eb9ec9725b6bad6f72d16a6"
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-arm64.dmg",
+      "size": 52782288,
+      "sha256": "d86db380960e950eec8684c2563e71d62d54212ad94a1bc05b74695f64143940"
     },
     "darwin-x86_64-app": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg",
-      "size": 46701550,
-      "sha256": "c7a810194ad4dd9784980f81593a03a127aeeadce29af757990cbac9b1c96709"
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-x64.dmg",
+      "size": 47725596,
+      "sha256": "5e7f05ecb88b4a89472d8db398ee11fb96386c7a8b5316d3e5d185d6a548e3ea"
     }
   }
 }

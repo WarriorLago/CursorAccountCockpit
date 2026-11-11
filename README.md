@@ -13,8 +13,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe"><strong>下载 Windows 0.2.66</strong></a> ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg"><strong>下载 macOS 2.0.7</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.68/Cursor-Account-Cockpit-0.2.68-x64-setup.exe"><strong>下载 Windows 0.2.68</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-universal.dmg"><strong>下载 macOS 2.0.8</strong></a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/">项目网站</a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/features.html">功能详解</a> ·
   <a href="./CHANGELOG.zh-CN.md">更新日志</a>
@@ -34,7 +34,7 @@
 
 ### 用量洞察
 
-把费用拆成 API 额度、Auto 额度和真实扣费，并和 Cursor 官方的百分比自动核对。每日趋势和用量时刻表能看出什么时候用得多，工作时间、节假日和调休都可以配置。只保存时间、模型、Token 和费用，不读取对话内容。
+把费用拆成 API 额度、Auto 额度和真实扣费，并和 Cursor 官方的百分比自动核对。每日趋势和用量时刻表能看出什么时候用得多，工作时间、节假日和调休都可以配置。点击同步会自动刷新账号与用量，认证被拒绝时自动续期重试，无需返回账号页。只保存时间、模型、Token 和费用，不读取对话内容。
 
 <p align="center"><img src="./docs/images/usage.png" alt="用量洞察" width="860"></p>
 
@@ -61,9 +61,9 @@
 
 | 平台 | 文件 |
 | --- | --- |
-| Windows 10 / 11 x64 | [安装包](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe) · [便携版](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-portable.exe) |
-| macOS 11+ (通用) | [通用 DMG（推荐）](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg) |
-| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg) |
+| Windows 10 / 11 x64 | [安装包](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.68/Cursor-Account-Cockpit-0.2.68-x64-setup.exe) · [便携版](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.68/Cursor-Account-Cockpit-0.2.68-portable.exe) |
+| macOS 11+ (通用) | [通用 DMG（推荐）](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-arm64.dmg) |
+| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-x64.dmg) |
 
 更多版本和校验文件见 [下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html)。
 

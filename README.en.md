@@ -13,8 +13,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe"><strong>Download for Windows 0.2.66</strong></a> ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg"><strong>Download for macOS 2.0.7</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.68/Cursor-Account-Cockpit-0.2.68-x64-setup.exe"><strong>Download for Windows 0.2.68</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-universal.dmg"><strong>Download for macOS 2.0.8</strong></a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/en/">Website</a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/en/features.html">Features</a> ·
   <a href="./CHANGELOG.md">Changelog</a>
@@ -35,6 +35,8 @@ Every account's plan, usage and reset time in one table. Switching writes the lo
 ### Usage insights
 
 Cost is split into API quota, Auto quota and real charges, then checked against Cursor's own percentages. A daily trend and time map show when usage happens, with configurable working hours and holidays. Only time, model, tokens and cost are stored, never conversations.
+
+Sync refreshes the account automatically and renews a rejected session once before retrying. No trip back to the Accounts page is needed.
 
 <p align="center"><img src="./docs/images/usage.png" alt="Usage insights" width="860"></p>
 
@@ -61,9 +63,9 @@ One prompt goes to many models, the results render side by side in a sandbox, an
 
 | Platform | File |
 | --- | --- |
-| Windows 10 / 11 x64 | [Installer](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe) · [Portable](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-portable.exe) |
-| macOS 11+ (Universal) | [Universal DMG (recommended)](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg) |
-| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg) |
+| Windows 10 / 11 x64 | [Installer](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.68/Cursor-Account-Cockpit-0.2.68-x64-setup.exe) · [Portable](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.68/Cursor-Account-Cockpit-0.2.68-portable.exe) |
+| macOS 11+ (Universal) | [Universal DMG (recommended)](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-arm64.dmg) |
+| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.8/Cursor-Account-Cockpit-2.0.8-macos-x64.dmg) |
 
 Other versions and checksums are on [the download page](https://warriorlago.github.io/CursorAccountCockpit/en/download.html).
 
