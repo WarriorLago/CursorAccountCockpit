@@ -13,8 +13,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe"><strong>Download for Windows 0.2.63</strong></a> ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg"><strong>Download for macOS 2.0.6</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe"><strong>Download for Windows 0.2.66</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg"><strong>Download for macOS 2.0.7</strong></a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/en/">Website</a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/en/features.html">Features</a> ·
   <a href="./CHANGELOG.md">Changelog</a>
@@ -40,13 +40,13 @@ Cost is split into API quota, Auto quota and real charges, then checked against 
 
 ### Team gateway
 
-Turn the account pool into a local API compatible with OpenAI, Anthropic and Responses. Give each person a key with daily and per-minute limits, allowed models and an expiry date, then see requests and source IPs per key. Failover is automatic, and it listens on this computer by default.
+Turn the account pool into a local API compatible with OpenAI, Anthropic and Responses. Give each person a key with daily and per-minute limits, allowed models and an expiry date, then see requests and source IPs per key. Failover is automatic, and it listens on this computer by default. Continue conversations in reused sessions, delete keys, and configure tool permissions and proxies.
 
 <p align="center"><img src="./docs/images/gateway-keys.png" alt="Team gateway" width="860"></p>
 
 ### Pelican bench
 
-One prompt goes to many models, the results render side by side in a sandbox, and your scores feed a leaderboard. Blind mode reveals the model only after you score it, and a run can be exported as a single HTML file.
+One prompt goes to many models, the results render side by side in a sandbox, and your scores feed a leaderboard. Blind mode reveals the model only after you score it, and a run can be exported as a single HTML file. Retry with another account or remove individual results.
 
 <p align="center"><img src="./docs/images/pelican.png" alt="Pelican bench" width="860"></p>
 
@@ -61,9 +61,9 @@ One prompt goes to many models, the results render side by side in a sandbox, an
 
 | Platform | File |
 | --- | --- |
-| Windows 10 / 11 x64 | [Installer](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe) · [Portable](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe) |
-| macOS 11+ (Universal) | [Universal DMG (recommended)](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg) |
-| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg) |
+| Windows 10 / 11 x64 | [Installer](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe) · [Portable](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-portable.exe) |
+| macOS 11+ (Universal) | [Universal DMG (recommended)](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg) |
+| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg) |
 
 Other versions and checksums are on [the download page](https://warriorlago.github.io/CursorAccountCockpit/en/download.html).
 

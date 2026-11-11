@@ -13,8 +13,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe"><strong>下载 Windows 0.2.63</strong></a> ·
-  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg"><strong>下载 macOS 2.0.6</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe"><strong>下载 Windows 0.2.66</strong></a> ·
+  <a href="https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg"><strong>下载 macOS 2.0.7</strong></a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/">项目网站</a> ·
   <a href="https://warriorlago.github.io/CursorAccountCockpit/features.html">功能详解</a> ·
   <a href="./CHANGELOG.zh-CN.md">更新日志</a>
@@ -40,13 +40,13 @@
 
 ### 团队网关
 
-把账号池变成本地 API，兼容 OpenAI、Anthropic 和 Responses 协议。给每个人发一个 Key，可设每日和每分钟限额、可用模型和到期日，并按 Key 查看请求量和来源 IP。账号出错时自动切换，默认只监听本机。
+把账号池变成本地 API，兼容 OpenAI、Anthropic 和 Responses 协议。给每个人发一个 Key，可设每日和每分钟限额、可用模型和到期日，并按 Key 查看请求量和来源 IP。账号出错时自动切换，默认只监听本机。连续对话复用会话，支持删除 Key、工具权限和代理设置。
 
 <p align="center"><img src="./docs/images/gateway-keys.png" alt="团队网关" width="860"></p>
 
 ### 鹈鹕测试
 
-同一句提示词发给多个模型，在沙箱里并排渲染，打分进排行榜。盲评模式下打完分才揭晓是谁画的，也可以导出成一个 HTML 文件分享。
+同一句提示词发给多个模型，在沙箱里并排渲染，打分进排行榜。盲评模式下打完分才揭晓是谁画的，也可以导出成一个 HTML 文件分享。支持换账号重试与移除单项结果。
 
 <p align="center"><img src="./docs/images/pelican.png" alt="鹈鹕测试" width="860"></p>
 
@@ -61,9 +61,9 @@
 
 | 平台 | 文件 |
 | --- | --- |
-| Windows 10 / 11 x64 | [安装包](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe) · [便携版](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe) |
-| macOS 11+ (通用) | [通用 DMG（推荐）](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg) |
-| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg) |
+| Windows 10 / 11 x64 | [安装包](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe) · [便携版](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-portable.exe) |
+| macOS 11+ (通用) | [通用 DMG（推荐）](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg) · [Apple Silicon](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg) |
+| macOS 10.15+ (Intel) | [Intel DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg) |
 
 更多版本和校验文件见 [下载页](https://warriorlago.github.io/CursorAccountCockpit/download.html)。
 

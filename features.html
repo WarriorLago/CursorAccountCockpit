@@ -9,7 +9,7 @@
   <meta property="og:description" content="账号与额度、用量洞察、团队网关、鹈鹕测试、账单导出和本机会话的详细说明。" />
   <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="assets/potato.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="assets/site.css?v=20261104" />
+  <link rel="stylesheet" href="assets/site.css?v=20261111" />
 </head>
 <body>
 <header class="topbar">
@@ -45,12 +45,12 @@
 </section><section class="doc-block" id="gateway">
   <h2>团队网关</h2>
   <p>把账号池变成 OpenAI / Anthropic / Responses 兼容的 API，给程序或同事使用。默认只监听本机，局域网访问需要手动开启。</p>
-  <ul><li>每人一个 Key：每日和每分钟限额、可用模型、到期日，可随时停用</li><li>按 Key、账号、模型统计请求量和来源 IP；Token 为估算值，真实费用以用量洞察为准</li><li>账号出错自动切换，忙时排队，账号池改动立即生效</li><li>提供试用面板和接入示例，包括 cURL、Python、Node.js、Anthropic SDK 和 Claude Code</li><li>局域网访问走不加密的 HTTP，只适合可信网络</li></ul>
+  <ul><li>每人一个 Key：每日和每分钟限额、可用模型、到期日，可随时停用或删除</li><li>按 Key、账号、模型统计请求量和来源 IP；Token 为估算值，真实费用以用量洞察为准</li><li>账号出错自动切换，忙时排队，账号池改动立即生效</li><li>提供试用面板和接入示例，包括 cURL、Python、Node.js、Anthropic SDK 和 Claude Code</li><li>局域网访问走不加密的 HTTP，只适合可信网络</li><li>连续对话优先复用账号与会话；工具权限、工作目录和代理连接可单独设置</li></ul>
   <figure class="frame"><img src="assets/images/gateway.webp" alt="网关概览" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/gateway-keys.webp" alt="API Key 管理" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/gateway-logs.webp" alt="请求日志" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
 </section><section class="doc-block" id="pelican">
   <h2>鹈鹕测试</h2>
   <p>同一句提示词发给多个模型，让它们各自生成一个 HTML，在沙箱里并排比较。预览时禁止联网。</p>
-  <ul><li>账号和模型自由搭配，实时显示每一格的进度</li><li>打分、盲评、排行榜，失败项可以就地重试</li><li>存档可复用，可导出成一个 HTML 文件分享</li><li>每个账号用独立的隔离 Worker，不影响正在运行的 API 服务</li></ul>
+  <ul><li>账号和模型自由搭配，实时显示每一格的进度</li><li>打分、盲评、排行榜，失败项可换账号重试，单项结果可移除</li><li>存档可复用，可导出成一个 HTML 文件分享</li><li>每个账号用独立的隔离 Worker，不影响正在运行的 API 服务</li></ul>
   <figure class="frame"><img src="assets/images/pelican.webp" alt="鹈鹕测试结果" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="assets/images/pelican-board.webp" alt="模型排行榜" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
 </section><section class="doc-block" id="billing">
   <h2>账单与收据</h2>
@@ -86,7 +86,7 @@
     </div>
   </div>
 </footer>
-  <script src="assets/platform-recommendation.js?v=20261104" defer></script>
-  <script src="assets/site.js?v=20261104" defer></script>
+  <script src="assets/platform-recommendation.js?v=20261111" defer></script>
+  <script src="assets/site.js?v=20261111" defer></script>
 </body>
 </html>

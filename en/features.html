@@ -9,7 +9,7 @@
   <meta property="og:description" content="Details on accounts and quota, usage insights, the team gateway, the pelican bench, invoice export and local sessions." />
   <meta property="og:image" content="https://warriorlago.github.io/CursorAccountCockpit/assets/images/usage.webp" />
   <link rel="icon" href="../assets/potato.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../assets/site.css?v=20261104" />
+  <link rel="stylesheet" href="../assets/site.css?v=20261111" />
 </head>
 <body>
 <header class="topbar">
@@ -45,12 +45,12 @@
 </section><section class="doc-block" id="gateway">
   <h2>Team gateway</h2>
   <p>Turn the account pool into an OpenAI, Anthropic and Responses compatible API for programs or colleagues. It listens on this computer by default, and LAN access has to be turned on.</p>
-  <ul><li>A key per person with daily and per-minute limits, allowed models and expiry, and can be disabled at any time</li><li>Requests and source IPs by key, account and model. Tokens are estimates, so use Usage insights for real cost</li><li>Automatic failover, queueing when busy, and pool changes that apply immediately</li><li>A playground and snippets for cURL, Python, Node.js, the Anthropic SDK and Claude Code</li><li>LAN access uses unencrypted HTTP and is only suitable for trusted networks</li></ul>
+  <ul><li>A key per person with daily and per-minute limits, allowed models and expiry, and can be disabled or deleted at any time</li><li>Requests and source IPs by key, account and model. Tokens are estimates, so use Usage insights for real cost</li><li>Automatic failover, queueing when busy, and pool changes that apply immediately</li><li>A playground and snippets for cURL, Python, Node.js, the Anthropic SDK and Claude Code</li><li>LAN access uses unencrypted HTTP and is only suitable for trusted networks</li><li>Reuse accounts and sessions across conversation turns; configure tool permissions, working directories and proxy connections</li></ul>
   <figure class="frame"><img src="../assets/images/gateway.webp" alt="Gateway overview" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/gateway-keys.webp" alt="API key management" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/gateway-logs.webp" alt="Request logs" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
 </section><section class="doc-block" id="pelican">
   <h2>Pelican bench</h2>
   <p>One prompt goes to many models, each returns an HTML file, and they are compared side by side in a sandbox with network access blocked.</p>
-  <ul><li>Mix accounts and models freely, with live progress for each cell</li><li>Ratings, blind review, a leaderboard and in-place retries</li><li>Reusable archives and single-file HTML export for sharing</li><li>Each account uses an isolated worker, so a running API service is unaffected</li></ul>
+  <ul><li>Mix accounts and models freely, with live progress for each cell</li><li>Ratings, blind review, a leaderboard, retries with another account and individual result removal</li><li>Reusable archives and single-file HTML export for sharing</li><li>Each account uses an isolated worker, so a running API service is unaffected</li></ul>
   <figure class="frame"><img src="../assets/images/pelican.webp" alt="Pelican results" width="1800" height="1125" loading="lazy" decoding="async" /></figure><figure class="frame"><img src="../assets/images/pelican-board.webp" alt="Model leaderboard" width="1800" height="1125" loading="lazy" decoding="async" /></figure>
 </section><section class="doc-block" id="billing">
   <h2>Invoices and receipts</h2>
@@ -86,7 +86,7 @@
     </div>
   </div>
 </footer>
-  <script src="../assets/platform-recommendation.js?v=20261104" defer></script>
-  <script src="../assets/site.js?v=20261104" defer></script>
+  <script src="../assets/platform-recommendation.js?v=20261111" defer></script>
+  <script src="../assets/site.js?v=20261111" defer></script>
 </body>
 </html>

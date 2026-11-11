@@ -4,10 +4,10 @@
 
 | 平台 | 当前版本 | 推荐下载 |
 | --- | --- | --- |
-| Windows x64 | `0.2.63` | [安装包](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-x64-setup.exe) · [便携版](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.63/Cursor-Account-Cockpit-0.2.63-portable.exe) |
-| macOS 通用版 | `2.0.6` | [Universal DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg) |
-| macOS Apple 芯片 | `2.0.6` | [arm64 DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg) |
-| macOS Intel | `2.0.6` | [x64 DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg) |
+| Windows x64 | `0.2.66` | [安装包](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-x64-setup.exe) · [便携版](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v0.2.66/Cursor-Account-Cockpit-0.2.66-portable.exe) |
+| macOS 通用版 | `2.0.7` | [Universal DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg) |
+| macOS Apple 芯片 | `2.0.7` | [arm64 DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg) |
+| macOS Intel | `2.0.7` | [x64 DMG](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg) |
 
 ## macOS 兼容范围
 
@@ -27,8 +27,8 @@
 
 - GitHub Windows 清单：[latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/latest/download/latest.json)
 - GitHub macOS 稳定通道：[latest.json](https://warriorlago.github.io/CursorAccountCockpit/updates/macos/latest.json)
-- GitHub macOS Release 附件：[macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/macos-latest.json)
+- GitHub macOS Release 附件：[macos-latest.json](https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/macos-latest.json)
 
 Windows 与 macOS 使用独立版本号及独立清单。macOS 客户端访问固定 HTTPS 通道地址，通道文件再指向最新的版本化 Release 附件；Apple Silicon、Intel 构建优先读取 `darwin-aarch64-app` / `darwin-x86_64-app`，缺失时回退到 `macos-universal-dmg`。清单请求失败时再尝试 GitHub Pages 与 GitHub raw 镜像。
 
-Windows `0.2.63` 发布在 GitHub Release `v0.2.63` 并标记为 Latest；macOS `2.0.6` 使用独立 Release `v2.0.6`。两个平台不共享版本号或 `latest.json`。
+Windows `0.2.66` 发布在 GitHub Release `v0.2.66` 并标记为 Latest；macOS `2.0.7` 使用独立 Release `v2.0.7`。两个平台不共享版本号或 `latest.json`。

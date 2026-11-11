@@ -1,5 +1,23 @@
 # Changelog
 
+## Windows [0.2.66] / macOS [2.0.7] - 2026-11-11
+
+- Keep consecutive API conversation turns on the same account and reuse idle sessions; improve tool calls and Responses continuation.
+- Add web search, file access, command execution and working-directory settings. File and command access remain off by default. Support direct connections, system proxies and explicit HTTP proxies, with detected Node.js and Agent paths.
+- Preserve unsaved settings during background refresh and show save errors beside the action.
+- Remove individual Pelican results with confirmation for successful drawings; skip unavailable models on the original account and allow retries with another account. Improve model catalog matching.
+- Include account-pool reconciliation, deduplicated runtime diagnostics, and persistent deletion of every API key, including the default key.
+- Fix Windows title-bar overlap and dropdown, scroll and page layouts. macOS retains native controls and ships Apple Silicon, Intel and Universal DMGs.
+
+## Windows [0.2.65] - 2026-11-05
+
+- Allow deleting every API key, including the default, with a visible Delete button and inline confirmation. Deleted keys stay deleted after restart; deleting all keys leaves an explicit empty state. Integration examples, playground and Cursor configuration use the selected remaining key.
+
+## Windows [0.2.64] - 2026-11-05
+
+- Reconcile the API account pool with deleted account files on startup, state reads and supervision, and immediately after account deletion. Persist the cleaned selection and retire removed workers after active requests finish.
+- Stop retrying deleted accounts and deduplicate runtime diagnostics. Keep unreadable account files selected and report their read/decryption errors explicitly.
+
 ## macOS [2.0.6] - 2026-11-04
 
 Includes the usage insights, team API gateway, pelican bench and settings improvements in Windows 0.2.63. Keeps native window controls and fixes bundle resources and CLI discovery when launched from Finder. The API gateway and pelican bench require Node.js 20+ and the official Cursor Agent CLI; account and quota management do not. Apple Silicon, Intel and Universal DMGs use the independent macOS OTA channel.

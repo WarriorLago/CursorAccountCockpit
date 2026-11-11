@@ -1,23 +1,23 @@
 {
-  "version": "2.0.6",
-  "publishedAt": "2026-11-04T10:46:49.812435Z",
-  "notes": "Usage insights, team API gateway, pelican bench and settings. Native macOS controls and Finder CLI discovery. API features require Node.js 20+ and Cursor Agent CLI.",
-  "notesZh": "用量洞察、团队 API 网关、鹈鹕测试台与设置改进；原生 Mac 窗口控制与 Finder CLI 识别。API 功能需 Node.js 20+ 与 Cursor Agent CLI。",
+  "version": "2.0.7",
+  "publishedAt": "2026-11-11T06:48:21.010594Z",
+  "notes": "Conversation reuse, API tools and proxy settings, account-pool and API key fixes, and Pelican result management.",
+  "notesZh": "连续对话复用、API 工具权限与代理、账号池与 Key 修复、鹈鹕结果管理。",
   "platforms": {
     "macos-universal-dmg": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-universal.dmg",
-      "sha256": "f99e8ddcee3481191a91aab1bd75275157c4824418c5b64194deaaecf86fc4af",
-      "size": 80210988
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-universal.dmg",
+      "size": 80582700,
+      "sha256": "847d938398a5f5ce33d5648069228996f10bafc5519917c34d75199966c892db"
     },
     "darwin-aarch64-app": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-arm64.dmg",
-      "sha256": "e3996a3f04f69e0364c82445d186d6f4cf584a2f443d291748ca13938f45a259",
-      "size": 52605320
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-arm64.dmg",
+      "size": 51523751,
+      "sha256": "bebddfd8c024abbc972f97a612c3319beb8915151eb9ec9725b6bad6f72d16a6"
     },
     "darwin-x86_64-app": {
-      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.6/Cursor-Account-Cockpit-2.0.6-macos-x64.dmg",
-      "sha256": "5334b3f50d150eb116c15da5642d24b5de081bbb20ed0fafe6dcfc691e15b0ab",
-      "size": 47503989
+      "url": "https://github.com/WarriorLago/CursorAccountCockpit/releases/download/v2.0.7/Cursor-Account-Cockpit-2.0.7-macos-x64.dmg",
+      "size": 46701550,
+      "sha256": "c7a810194ad4dd9784980f81593a03a127aeeadce29af757990cbac9b1c96709"
     }
   }
 }
